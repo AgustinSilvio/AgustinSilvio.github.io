@@ -77,7 +77,7 @@ const siteConfig: SiteConfig = {
     ],
     socialLinks: [
         {
-            text: '',
+            text: 'Linkedin',
             href: 'https://www.linkedin.com/in/agustinsilviorojas/'
         },
         {
@@ -91,15 +91,18 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
+        text: "📈I'm specialized in actuarial data analysis, process automatization, model development, and information visualization for decision-making. I am continuously learning about data science, programming, capital markets, insurance and reinsurance.
+I work with efficient methodologies and I am highly receptive to constructive feedback, with a strong interest in continuous learning and bringing value through technical knowledge and interdisciplinary collaboration. 
+
+<img src="https://media.tenor.com/images/7e96d994f29b388f63f7aa77ff2bea78/tenor.gif" width="25">I have a strong enthusiasm for the ETL (Extract, Transform, Load) process, particularly in managing missing values, data inconsistencies, outliers, and other data quality challenges. I enjoy diving deep into data analysis, statistical modeling, and applying machine learning techniques for forecasting and classification tasks. My work is grounded in solid statistical principles, and I strive to turn complex data into actionable insights that support strategic decision-making.",
         image: {
-            src: '/foto_perfil.jpeg',
+            src: '/foto_perfil.JPG',
             alt: 'profile_photo'
         },
         actions: [
             {
                 text: 'Get in Touch',
-                href: '/contact'
+                href: 'mailto:agustinsilviorojas@outlook.com.ar'
             }
         ]
     },
