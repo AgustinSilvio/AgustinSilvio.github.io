@@ -1,66 +1,77 @@
 ---
-title: 'EcoBuddy: Sustainable Living App'
-description: EcoBuddy is a mobile app that gamifies sustainable living. Users can set eco-friendly goals, track their carbon footprint, and earn virtual rewards for adopting environmentally conscious habits.
-publishDate: 'Jan 02 2024'
+title: 'Fraud_Detection models'
+description: Machine learning techniques are used t.
+publishDate: '11/9/2025'
 seo:
   image:
-    src: '/project-1.jpg'
+    src: '/fraude.jpg'
     alt: Project preview
 ---
 
-![Project preview](/project-1.jpg)
+![Project preview](/fraude.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Note:** The full project is in [Github](https://github.com/AgustinSilvio/Fraud_Detection).
 
-**Project Overview:**
-EcoBuddy is a revolutionary mobile application designed to make sustainable living accessible, engaging, and rewarding. With a focus on gamification and real-world impact, EcoBuddy encourages users to adopt eco-friendly habits, reduce their carbon footprint, and contribute to a healthier planet.
+# **Project Overview:**
+
+Project Summary
+1. Data Generation & Import
+Synthetic transaction data is generated with realistic fraud patterns, including user demographics, transaction details, device info, and risk factors (e.g., night transactions, high amounts, new accounts, deceased users).
+Data is imported and missing values are handled using imputation (median for numeric, mode for categorical).
+2. Exploratory Data Analysis (EDA)
+Descriptive statistics, missing value checks, and duplicate detection are performed.
+Fraud rate and dataset shape are displayed.
+Visualizations help understand feature distributions and fraud patterns.
+3. Feature Engineering
+New features are created: amount-to-income ratio, average product price, high-value transaction flag, new customer flag, unusual device-OS combinations, time-based features (hour, day, month, is_night, is_weekend).
+Categorical variables are encoded using one-hot encoding.
+Numerical features are scaled with StandardScaler.
+4. Data Preparation
+Features (x) and target (y) are separated.
+Class imbalance is addressed using SMOTE oversampling.
+Data is split into training and test sets.
+5. Dimensionality Reduction (PCA)
+Principal Component Analysis (PCA) is applied to reduce dimensionality and capture most variance with fewer components.
+Both the PCA model and transformed data are saved for later use.
+6. Model Training
+Multiple models are trained and compared:
+Random Forest (baseline)
+XGBoost
+Models are trained using:
+PCA components
+Standardized data
+Original (raw) data (after encoding)
+Hyperparameter optimization is performed using GridSearchCV.
+7. Model Evaluation
+Models are evaluated using metrics: F1-score, ROC-AUC, precision, recall, confusion matrix.
+Feature importance is visualized.
+Fraud probability distributions are plotted.
+8. Prediction Functions
+Custom prediction functions are created for both PCA-based and standardized-data models.
+Functions accept new transaction data and return fraud probability and classification.
+9. Reporting & Visualization
+Results are exported to CSV.
+Dashboards are built using Panel and Plotly for strategic and analytical views.
+Visualizations include KPIs, fraud rates by country, transaction amount vs. fraud, and model performance.
+10. Documentation & Sharing
+The process is documented for reproducibility and sharing with technical and non-technical audiences.
+Notebooks can be exported to HTML/PDF for reporting.
+This pipeline enables robust, interpretable, and scalable fraud detection, with clear steps for data handling, modeling, evaluation, and deployment. Let me know if you need a more detailed breakdown of any step or a visual workflow!
 
 ## Objectives
 
-1. Develop a user-friendly mobile app that motivates individuals to adopt sustainable practices in their daily lives.
-2. Utilize gamification elements to make sustainable living fun and interactive.
-3. Provide educational resources and personalized challenges to empower users to make informed eco-conscious decisions.
+- Detect fraudulent transactions using machine learning.
+- Build a reproducible pipeline for all stages (data, modeling, evaluation).
+- Compare multiple approaches and algorithms.
+- Provide interpretable results and clear reporting.
+- Document and share the workflow for technical and non-technical audiences
 
-## Features
 
-1. **EcoScore and Challenges:**
-
-- Users are assigned an EcoScore based on their sustainable activities and choices.
-- Daily and weekly challenges encourage users to adopt new habits and compete with friends or the community to earn EcoPoints.
-
-2. **Personalized Eco-Goals:**
-
-- Users can set and track personalized eco-goals, such as reducing plastic usage, conserving water, or choosing eco-friendly transportation.
-- The app provides tips and suggestions to help users achieve their goals.
-
-3. **Green Rewards Marketplace:**
-
-- EcoPoints earned through challenges and sustainable actions can be redeemed in a virtual Green Rewards Marketplace.
-- The marketplace offers discounts on eco-friendly products, services, and even contributions to environmental causes.
-
-4. **Community Hub:**
-
-- A community feature allows users to connect, share their eco-friendly achievements, and inspire others.
-- Users can join local eco-groups, organize clean-up events, and collaborate on sustainability projects.
-
-5. **EcoEducator AI Assistant:**
-
-- An AI-powered assistant, EcoEducator, provides personalized eco-tips, facts, and information based on users' preferences and habits.
-- Users can chat with EcoEducator for instant advice on sustainable living.
 
 ## Technology Stack
 
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
+Python
 
-## Outcome
 
-EcoBuddy has successfully created a community of environmentally conscious individuals who actively participate in sustainable living practices. The app not only educates and motivates users but also provides tangible rewards for their commitment to a greener lifestyle, fostering a positive impact on the environment.
 
-## Client Testimonial
-
-> We couldn't be happier with the results delivered by Ethan Donovan. From the initial concept discussions to the final product, their responsiveness and collaborative approach were impressive. Our startup's website now stands out, thanks to their creative input and commitment to excellence.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+**Note:** The project is still in process.

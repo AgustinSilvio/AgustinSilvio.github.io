@@ -13,7 +13,7 @@ seo:
 
 ## Agustín Rojas - Actuarial data analist.
 
-**Greetings!** I'm Agustín Rojas, a passionate actuarial data analist residing in the picturesque landscapes of [the capital of Argentina](https://es.wikipedia.org/wiki/Buenos_Aires). 
+**Greetings!** I'm Agustín Rojas, a passionate actuarial data analist residing in the picturesque landscapes of [Ciudad autónoma de Buenos Aires](https://es.wikipedia.org/wiki/Buenos_Aires). 
 
 ## Skills and Expertise
 
