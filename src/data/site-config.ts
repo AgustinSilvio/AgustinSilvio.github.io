@@ -42,8 +42,7 @@ const siteConfig: SiteConfig = {
     website: 'https://agustinsilvio.github.io/',
     title: 'Agustín Silvio Andrés Rojas',
     subtitle: 'My personal web',
-    description: 'Hi , I'm Agustín Silvio Andrés Rojas. ',
-    },
+    description: 'Hi , I\'m Agustín Silvio Andrés Rojas. ',
     headerNavLinks: [
         {
             text: 'Home',
