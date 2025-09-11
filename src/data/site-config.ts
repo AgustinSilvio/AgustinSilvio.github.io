@@ -57,6 +57,12 @@ const siteConfig: SiteConfig = {
             text: 'Github',
             href: 'https://github.com/AgustinSilvio/'
         }
+
+                {
+            text: 'CV',
+            href: '/CV Rojas Agustín .pdf'
+        },
+
     ],
     footerNavLinks: [
         {
