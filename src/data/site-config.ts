@@ -89,15 +89,15 @@ const siteConfig: SiteConfig = {
             href: 'https://twitter.com/'
         }
     ],
-    hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "📈I'm specialized in actuarial data analysis, process automatization, model development, and information visualization for decision-making. I am continuously learning about data science, programming, capital markets, insurance and reinsurance.
+hero: {
+    title: 'Hi There & Welcome to My Corner of the Web!',
+    text: `📈I'm specialized in actuarial data analysis, process automatization, model development, and information visualization for decision-making. I am continuously learning about data science, programming, capital markets, insurance and reinsurance.
 I work with efficient methodologies and I am highly receptive to constructive feedback, with a strong interest in continuous learning and bringing value through technical knowledge and interdisciplinary collaboration. 
 
-<img src="https://media.tenor.com/images/7e96d994f29b388f63f7aa77ff2bea78/tenor.gif" width="25">I have a strong enthusiasm for the ETL (Extract, Transform, Load) process, particularly in managing missing values, data inconsistencies, outliers, and other data quality challenges. I enjoy diving deep into data analysis, statistical modeling, and applying machine learning techniques for forecasting and classification tasks. My work is grounded in solid statistical principles, and I strive to turn complex data into actionable insights that support strategic decision-making.",
-        image: {
-            src: '/foto_perfil.JPG',
-            alt: 'profile_photo'
+<img src="https://media.tenor.com/images/7e96d994f29b388f63f7aa77ff2bea78/tenor.gif" width="25">I have a strong enthusiasm for the ETL (Extract, Transform, Load) process, particularly in managing missing values, data inconsistencies, outliers, and other data quality challenges. I enjoy diving deep into data analysis, statistical modeling, and applying machine learning techniques for forecasting and classification tasks. My work is grounded in solid statistical principles, and I strive to turn complex data into actionable insights that support strategic decision-making.`,
+    image: {
+        src: '/foto_perfil.JPG',
+        alt: 'profile_photo'
         },
         actions: [
             {
