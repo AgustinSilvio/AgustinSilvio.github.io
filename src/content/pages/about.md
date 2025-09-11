@@ -17,25 +17,6 @@ seo:
 
 ## Skills and Expertise
 
-
- 
-## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="50px"> MY SKILLS INCLUDE:
-
-<span> 
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/r-project/r-project-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/sas/sas-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/github/github-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/github_copilot/github_copilot-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/microsoft_powerbi/microsoft_powerbi-ar21~bgwhite.svg"></code>
-<code><img width="15%" src="https://www.vectorlogo.zone/logos/google_analytics/google_analytics-ar21~bgwhite.svg"></code>
-</span>
-
  With proficiency in **EXCEL**, **PYTHON**, **POWER BI**, and **SQL**. 
 
 ## Innovation and Problem-Solving
