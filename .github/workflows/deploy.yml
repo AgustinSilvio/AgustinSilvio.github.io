@@ -1,41 +1,35 @@
-name: Deploy to GitHub Pages
+7:29:22 PM [vite] (ssr) Error when evaluating SSR module /home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/astro.config.mjs: Transform failed with 1 error:
+/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/src/data/site-config.ts:61:16: ERROR: Expected "]" but found "{"
+  Plugin: vite:esbuild
+  File: /home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/src/data/site-config.ts:61:16
+  
+  Expected "]" but found "{"
+  59 |          }
+  60 |  
+  61 |                  {
+     |                  ^
+  62 |              text: 'CV',
+  63 |              href: '/CV Rojas Agustín .pdf'
+  
+      at failureErrorWithLog (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:1477:15)
+      at /home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:756:50
+      at responseCallbacks.<computed> (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:623:9)
+      at handleIncomingPacket (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:678:12)
+      at Socket.readFromStdout (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:601:7)
+      at Socket.emit (node:events:524:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)
+[astro] Unable to load your Astro config
 
-on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
-  push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
-  workflow_dispatch:
-
-# Allow this job to clone the repo and create a page deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        # with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-        # env:
-          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+Expected "]" but found "{"
+  Location:
+    /home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/src/data/site-config.ts:61:16
+  Stack trace:
+    at failureErrorWithLog (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:1477:15)
+    at responseCallbacks.<computed> (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:623:9)
+    at Socket.readFromStdout (/home/runner/work/AgustinSilvio.github.io/AgustinSilvio.github.io/node_modules/esbuild/lib/main.js:601:7)
+    at addChunk (node:internal/streams/readable:561:12)
+    at Readable.push (node:internal/streams/readable:392:5)
+Error: Process completed with exit code 1.
