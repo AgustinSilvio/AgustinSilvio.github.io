@@ -39,13 +39,10 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://agustinsilvio.github.io/',
     title: 'Agustín Silvio Andrés Rojas',
     subtitle: 'My personal web',
     description: 'Hi , I'm Agustín Silvio Andrés Rojas. ',
-    image: {
-        src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
     },
     headerNavLinks: [
         {
