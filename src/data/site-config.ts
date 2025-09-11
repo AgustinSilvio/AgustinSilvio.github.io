@@ -52,10 +52,7 @@ const siteConfig: SiteConfig = {
             text: 'Projects',
             href: '/projects'
         },
-        {
-            text: 'Blog',
-            href: '/blog'
-        },
+
         {
             text: 'Github',
             href: 'https://github.com/AgustinSilvio/'
@@ -79,15 +76,8 @@ const siteConfig: SiteConfig = {
         {
             text: 'Linkedin',
             href: 'https://www.linkedin.com/in/agustinsilviorojas/'
-        },
-        {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
-        },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
         }
+        
     ],
 hero: {
     title: 'Hi There & Welcome to My Corner of the Web!',
