@@ -1,3 +1,5 @@
+**Tip for continue the web: change the .com of the url with .dev to open vscode in the web**
+
 # Dante - Astro & Tailwind CSS Theme by justgoodui.com
 
 Dante is a single-author blog and portfolio theme for Astro.js. Featuring a minimal, slick, responsive and content-focused design. For more Astro.js themes please check [justgoodui.com](https://justgoodui.com/).
