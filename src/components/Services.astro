@@ -1,0 +1,229 @@
+---
+// src/components/Services.astro
+
+const services = [
+    {
+        icon: '🛡️',
+        title: 'Consultoría Actuarial & Tarificación',
+        subtitle: 'Actuarial & Quantitative Consulting',
+        description: 'Diseño y evaluación económica-financiera de contratos contingentes. Desarrollo de modelos de tarificación y estimación de reservas.',
+        tags: ['Tarificación', 'Contratos Contingentes', 'Seguros'],
+        benefit: 'Protección de la rentabilidad y gestión adecuada del riesgo operativo.'
+    },
+    {
+        icon: '📈',
+        title: 'Gestión de Riesgos & Estrategia Financiera',
+        subtitle: 'Risk Management & Financial Strategy',
+        description:
+            'Modelos actuariales y estadísticos para reportes, proyecciones financieras y asesoramiento en estrategias de inversión, ahorro y análisis de portafolios.',
+        tags: ['Modelos Estadísticos', 'Capital', 'Proyecciones'],
+        benefit: 'Optimización de la solvencia y mitigación de pérdidas no planificadas.'
+    },
+    {
+        icon: '📊',
+        title: 'Business Intelligence & Tableros de Control',
+        subtitle: 'Business Intelligence & Executive Dashboards',
+        description: 'Diseño de paneles de control interactivos y reportes ejecutivos automatizados para el monitoreo en tiempo real de indicadores clave.',
+        tags: ['Indicadores Clave', 'Reportes Ejecutivos', 'BI'],
+        benefit: 'Toma de decisiones estratégicas basada en análisis cuantitativo riguroso.'
+    },
+    {
+        icon: '⚙️',
+        title: 'Automatización & Arquitectura de Datos',
+        subtitle: 'Process Automation & Data Architecture',
+        description:
+            'Conversión de procesos manuales y planillas frágiles en sistemas automatizados, auditables y estructurados sobre bases de datos relacionales.',
+        tags: ['ETL / Pipelines', 'Bases de Datos', 'Optimización'],
+        benefit: 'Eficiencia operativa, eliminación de errores humanos y escalabilidad.'
+    }
+];
+
+const benefits = [
+    { title: 'Gestión Financiera & de Riesgos', desc: 'Optimización continua respaldada en evidencia matemática.' },
+    { title: 'Decisiones Basadas en Datos', desc: 'Reducción de la incertidumbre en operaciones complejas.' },
+    { title: 'Eficiencia Operativa', desc: 'Automatización de procesos repetitivos y reportes masivos.' }
+];
+---
+
+<section id="servicios" class="services-section">
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="section-header">
+            <h2>Servicios & Consultoría</h2>
+            <p>
+                Soluciones cuantitativas, actuariales y tecnológicas diseñadas para transformar datos complejos en decisiones estratégicas y procesos
+                eficientes.
+            </p>
+        </div>
+
+        <!-- Banner de Beneficios Ejecutivos -->
+        <div class="benefits-banner">
+            {
+                benefits.map((b) => (
+                    <div class="benefit-item">
+                        <span class="check-icon">✓</span>
+                        <div>
+                            <strong>{b.title}:</strong> {b.desc}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Grid de Tarjetas de Servicios -->
+        <div class="services-grid">
+            {
+                services.map((service) => (
+                    <div class="service-card">
+                        <div class="card-header">
+                            <span class="service-icon">{service.icon}</span>
+                            <div class="tags">
+                                {service.tags.map((tag) => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <h3>{service.title}</h3>
+                        <span class="subtitle">{service.subtitle}</span>
+                        <p class="description">{service.description}</p>
+
+                        <div class="card-footer">
+                            <strong>Impacto:</strong> {service.benefit}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+        opacity: 0.85;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Banner de Beneficios */
+    .benefits-banner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 3rem;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .check-icon {
+        color: #3b82f6;
+        font-weight: bold;
+    }
+
+    /* Grid y Tarjetas */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.75rem;
+    }
+
+    .service-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.25rem;
+    }
+
+    .service-icon {
+        font-size: 2.2rem;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        opacity: 0.8;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        opacity: 0.5;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .description {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        opacity: 0.85;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .card-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 1rem;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+</style>
