@@ -96,3 +96,16 @@ html.dark {
         @apply font-serif font-normal italic border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
     }
 }
+
+@layer base {
+    /* Evita que cualquier texto desborde su contenedor en pantallas pequeñas */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, span, a {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
