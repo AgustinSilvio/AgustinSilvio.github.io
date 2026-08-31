@@ -1,0 +1,50 @@
+---
+// src/components/LanguageToggle.astro
+---
+
+<button id="lang-toggle" class="lang-btn" type="button" aria-label="Toggle language">
+    <span id="lang-label">EN</span>
+</button>
+
+<style>
+    .lang-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        border-radius: 8px;
+        border: 1px solid var(--border-color-main, rgba(255, 255, 255, 0.2));
+        background: transparent;
+        color: var(--text-color-main, inherit);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+        background: var(--background-color-muted, rgba(255, 255, 255, 0.1));
+        transform: translateY(-1px);
+    }
+</style>
+
+<script is:inline>
+    function updateLangUI() {
+        const currentLang = localStorage.getItem('site_lang') || 'es';
+        const label = document.getElementById('lang-label');
+        if (label) {
+            label.textContent = currentLang === 'es' ? 'EN' : 'ES';
+        }
+    }
+
+    function toggleLanguage() {
+        const currentLang = localStorage.getItem('site_lang') || 'es';
+        const newLang = currentLang === 'es' ? 'en' : 'es';
+        localStorage.setItem('site_lang', newLang);
+        window.location.reload();
+    }
+
+    document.getElementById('lang-toggle')?.addEventListener('click', toggleLanguage);
+    updateLangUI();
+</script>
