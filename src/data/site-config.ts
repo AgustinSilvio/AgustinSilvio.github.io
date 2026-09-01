@@ -7,6 +7,8 @@ export type Image = {
 export type Link = {
     text: string;
     href: string;
+    text_es?: string;
+    text_en?: string;
 };
 
 export type Hero = {
@@ -37,66 +39,86 @@ export type SiteConfig = {
     postsPerPage?: number;
     projectsPerPage?: number;
 };
+
 const siteConfig: SiteConfig = {
     website: 'https://agustinsilvio.github.io/',
     title: 'Agustín Silvio Andrés Rojas',
-    subtitle: 'My personal web',
-    description: 'Hi , I am Agustín Silvio Andrés Rojas. ',
+    subtitle: '',
+    description: 'Sitio personal y profesional de Agustín Rojas — Modelos actuariales, gestión cuantitativa de riesgos y analítica de datos.',
     headerNavLinks: [
         {
             text: 'Home',
+            text_es: 'Inicio',
+            text_en: 'Home',
             href: '/'
         },
         {
             text: 'Projects',
+            text_es: 'Proyectos',
+            text_en: 'Projects',
             href: '/projects'
         },
         {
-            text: 'Github',
-            href: 'https://github.com/AgustinSilvio/'
+            text: 'Writing',
+            text_es: 'Artículos',
+            text_en: 'Writing',
+            href: '/blog'
         },
         {
-            text: 'CV',
-            href: '/cv.pdf'
+            text: 'About',
+            text_es: 'Sobre mí',
+            text_en: 'About',
+            href: '/about'
+        },
+        {
+            text: 'Contact',
+            text_es: 'Contacto',
+            text_en: 'Contact',
+            href: '/contact'
         }
     ],
     footerNavLinks: [
         {
             text: 'About',
+            text_es: 'Sobre mí',
+            text_en: 'About',
             href: '/about'
         },
         {
+            text: 'Projects',
+            text_es: 'Proyectos',
+            text_en: 'Projects',
+            href: '/projects'
+        },
+        {
+            text: 'Writing',
+            text_es: 'Artículos',
+            text_en: 'Writing',
+            href: '/blog'
+        },
+        {
             text: 'Contact',
+            text_es: 'Contacto',
+            text_en: 'Contact',
             href: '/contact'
         },
         {
             text: 'Terms',
+            text_es: 'Términos',
+            text_en: 'Terms',
             href: '/terms'
         }
     ],
     socialLinks: [
         {
-            text: 'Linkedin',
+            text: 'LinkedIn',
             href: 'https://www.linkedin.com/in/agustinsilviorojas/'
+        },
+        {
+            text: 'GitHub',
+            href: 'https://github.com/AgustinSilvio/'
         }
     ],
-    hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
-        text: `📈I'm specialized in actuarial data analysis, process automatization, model development, and information visualization for decision-making. I am continuously learning about data science, programming, capital markets, insurance and reinsurance.
-I work with efficient methodologies and I am highly receptive to constructive feedback, with a strong interest in continuous learning and bringing value through technical knowledge and interdisciplinary collaboration. 
-
-<img src="https://media.tenor.com/images/7e96d994f29b388f63f7aa77ff2bea78/tenor.gif" width="25">I have a strong enthusiasm for the ETL (Extract, Transform, Load) process, particularly in managing missing values, data inconsistencies, outliers, and other data quality challenges. I enjoy diving deep into data analysis, statistical modeling, and applying machine learning techniques for forecasting and classification tasks. My work is grounded in solid statistical principles, and I strive to turn complex data into actionable insights that support strategic decision-making.`,
-        image: {
-            src: '/foto_perfil.JPG',
-            alt: 'profile_photo'
-        },
-        actions: [
-            {
-                text: 'Get in Touch',
-                href: 'mailto:agustinsilviorojas@outlook.com.ar'
-            }
-        ]
-    },
     postsPerPage: 8,
     projectsPerPage: 8
 };
