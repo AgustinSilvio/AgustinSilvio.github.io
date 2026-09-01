@@ -8,8 +8,6 @@ const recommendations = [
         role_es: 'Dir. Ejecutivo de Control de Gestión y Administración',
         role_en: 'Executive Director of Management Control & Administration',
         image: '/Guillermo_coccoz.png',
-        highlight_es: 'Un profesional al cual recomiendo sin reparo alguno. Alcanzó los mayores niveles de desempeño esperables.',
-        highlight_en: 'A professional whom I recommend without reservation. He achieved the highest expected performance levels.',
         text_es:
             'Agustín es un profesional al cual recomiendo sin reparo alguno. Ha cumplido con éxito todas las etapas del plan de capacitación y entrenamiento previsto en nuestro Programa de Jóvenes Profesionales alcanzando los mayores niveles de desempeño esperables. También ha adquirido una invalorable experiencia trabajando en una organización compleja, poniendo a prueba sus capacidades de gestión y su inteligencia emocional.',
         text_en:
@@ -20,8 +18,6 @@ const recommendations = [
         role_es: 'Gerente en Gestión del Talento',
         role_en: 'Talent Management Leader',
         image: '/Veronica_martino.png',
-        highlight_es: 'Enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca.',
-        highlight_en: 'Outstanding eagerness to learn and deliver high value from a fresh, curious perspective.',
         text_es:
             'Tuve la oportunidad de acompañar a Agustín durante su paso por el Programa de Jóvenes Profesionales de GrupoST, donde demostró una enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca. Siempre con ganas de crecer e ir por más, lo cual será sin dudas el motor clave en su crecimiento profesional.',
         text_en:
@@ -32,8 +28,6 @@ const recommendations = [
         role_es: 'Pricing Actuary',
         role_en: 'Pricing Actuary',
         image: '/Jessica_viola.png',
-        highlight_es: 'Aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.',
-        highlight_en: 'Contributed valuable insights and his drive fostered an exceptional team atmosphere.',
         text_es:
             'En el tiempo que trabajé con Agustín, demostró proactividad, muchas ganas de aprender y predisposición para colaborar. Siempre mostró curiosidad por entender los temas, aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.',
         text_en:
@@ -70,9 +64,6 @@ const recommendations = [
                             </span>
                         </div>
 
-                        <p class="highlight">
-                            "<T es={item.highlight_es} en={item.highlight_en} />"
-                        </p>
                         <p class="full-text">
                             <T es={item.text_es} en={item.text_en} />
                         </p>
@@ -159,13 +150,6 @@ const recommendations = [
         padding: 0.25rem 0.6rem;
         border-radius: 20px;
         font-weight: 600;
-    }
-    .highlight {
-        font-size: 1.05rem;
-        font-weight: 600;
-        line-height: 1.4;
-        margin-bottom: 1rem;
-        color: #e2e8f0;
     }
     .full-text {
         font-size: 0.9rem;
