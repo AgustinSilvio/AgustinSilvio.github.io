@@ -1,9 +1,9 @@
 # Al iniciar: en terminal "npm run dev"
 #Al finalizar: Para guardar y cerrar cuando termines: Haz clic en la terminal de VS Code y presiona Ctrl + C para detener servidor
 
-#git add .
-#git commit -m "Detalle breve de lo que cambiaste hoy"
-#git push origin main
+#  git add .
+#  git commit -m "Detalle breve de lo que cambiaste hoy"
+#  git push origin main
 
 # build output
 dist/
