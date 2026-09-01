@@ -1,0 +1,64 @@
+---
+// src/components/ContactCTA.astro
+import Button from './Button.astro';
+import T from './T.astro';
+---
+
+<section class="mb-16 sm:mb-24">
+    <div class="border border-[var(--border-color-main)]/20 rounded-2xl p-6 sm:p-10 bg-main/5">
+        <div class="max-w-2xl mb-8">
+            <h2 class="text-2xl sm:text-3xl font-serif font-semibold mb-3">
+                <T es="¿Trabajamos juntos?" en="Let's Work Together" />
+            </h2>
+            <p class="text-base sm:text-lg opacity-85 leading-relaxed">
+                <T
+                    es="Te ofrezco dos vías directas de colaboración: un diagnóstico técnico sin cargo para tu organización o un canal abierto para debate e intercambio académico."
+                    en="I offer two direct collaboration paths: a free technical assessment for your organization or an open channel for academic and research discussions."
+                />
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Opción 1: Diagnóstico Corporativo -->
+            <div class="flex flex-col justify-between p-6 rounded-xl border border-[var(--border-color-main)]/15 bg-main/5">
+                <div>
+                    <div class="text-2xl mb-2">📊</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">
+                        <T es="Diagnóstico & Propuesta Sin Cargo" en="Free Assessment & Proposal" />
+                    </h3>
+                    <p class="text-sm opacity-80 leading-relaxed mb-6">
+                        <T
+                            es="Evaluación preliminar de necesidades en tarificación, reservas, automatización de datos en SQL/Python o tableros de BI, con propuesta de trabajo sin costo ni compromiso."
+                            en="Preliminary evaluation of your needs in pricing, reserving, data automation in SQL/Python, or executive BI dashboards, with no initial cost or commitment."
+                        />
+                    </p>
+                </div>
+                <Button
+                    href="mailto:agustinsilviorojas@gmail.com?subject=Consulta%20Profesional%20-%20Diagn%C3%B3stico%20Sin%20Cargo"
+                    class="w-full text-center"
+                >
+                    <T es="Solicitar diagnóstico →" en="Request free assessment →" />
+                </Button>
+            </div>
+
+            <!-- Opción 2: Debate Académico -->
+            <div class="flex flex-col justify-between p-6 rounded-xl border border-[var(--border-color-main)]/15 bg-main/5">
+                <div>
+                    <div class="text-2xl mb-2">🎓</div>
+                    <h3 class="text-lg font-serif font-semibold mb-2">
+                        <T es="Debate Académico & Investigación" en="Academic Discussion & Research" />
+                    </h3>
+                    <p class="text-sm opacity-80 leading-relaxed mb-6">
+                        <T
+                            es="Espacio abierto para intercambiar ideas sobre solvencia regulatoria, reaseguro, modelado estocástico y publicaciones técnicas."
+                            en="Open exchange for discussing regulatory solvency, reinsurance structures, stochastic modeling, and technical publications."
+                        />
+                    </p>
+                </div>
+                <Button href="/contact" class="w-full text-center">
+                    <T es="Ver canales de contacto →" en="View contact channels →" />
+                </Button>
+            </div>
+        </div>
+    </div>
+</section>

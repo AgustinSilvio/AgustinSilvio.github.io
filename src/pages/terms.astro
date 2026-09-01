@@ -1,0 +1,68 @@
+---
+// src/pages/terms.astro
+import T from '../components/T.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Términos y Condiciones | Agustín Rojas" description="Términos de uso, aviso legal y condiciones generales del sitio web de Agustín Rojas.">
+    <article class="prose max-w-none py-8">
+        <header class="mb-10">
+            <h1 class="text-3xl font-serif font-bold mb-3 sm:text-5xl leading-tight">
+                <T es="Términos de Uso & Aviso Legal" en="Terms of Use & Legal Disclaimer" />
+            </h1>
+            <p class="text-sm opacity-60">
+                <T es="Última actualización: Marzo 2026" en="Last updated: March 2026" />
+            </p>
+        </header>
+
+        <section class="space-y-6 leading-relaxed">
+            <div>
+                <h2 class="text-xl font-serif font-semibold mb-2">
+                    <T es="1. Propósito Informativo y Educativo" en="1. Educational & Informational Purpose" />
+                </h2>
+                <p>
+                    <T
+                        es="Los artículos, publicaciones técnicas, códigos y análisis expuestos en este sitio web tienen fines estrictamente informativos, académicos y de divulgación. No constituyen asesoramiento actuarial, legal, impositivo ni financiero vinculante para la toma de decisiones corporativas o individuales sin un contrato formal previo."
+                        en="All articles, technical notes, source code, and analytical models published on this website are provided strictly for educational and informational purposes. They do not constitute binding actuarial, legal, tax, or financial advice for corporate or personal decision-making without a formal engagement contract."
+                    />
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold mb-2">
+                    <T es="2. Diagnósticos y Propuestas Preliminares" en="2. Preliminary Assessments & Proposals" />
+                </h2>
+                <p>
+                    <T
+                        es="Las solicitudes de diagnóstico técnico preliminar sin cargo no generan obligación comercial ni relación contractual entre las partes hasta la suscripción formal de una propuesta de servicios o contrato de consultoría."
+                        en="Requests for free preliminary assessments do not establish a commercial obligation or contractual relationship between parties until a formal service proposal or consulting agreement is explicitly executed."
+                    />
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold mb-2">
+                    <T es="3. Propiedad Intelectual" en="3. Intellectual Property" />
+                </h2>
+                <p>
+                    <T
+                        es="Los contenidos originales redactados en este sitio web, salvo indicación en contrario o citas a fuentes públicas, son propiedad de Agustín Rojas. Se permite su cita o referencia académica siempre que se atribuya la autoría y se incluya un enlace al contenido original."
+                        en="Original content published on this website, unless stated otherwise or citing public sources, is the property of Agustín Rojas. Academic referencing and quotation are permitted provided proper attribution and a direct link to the original source are included."
+                    />
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-serif font-semibold mb-2">
+                    <T es="4. Enlaces a Sitios de Terceros" en="4. Third-Party Links" />
+                </h2>
+                <p>
+                    <T
+                        es="Este sitio contiene enlaces a plataformas externas (como LinkedIn, repositorios de GitHub y portales de noticias o legislación). No se asume responsabilidad por las políticas de privacidad, disponibilidad o contenidos de dichos sitios externos."
+                        en="This site may contain links to external platforms (such as LinkedIn, GitHub repositories, news outlets, and legislation portals). No responsibility is assumed for the content, privacy policies, or availability of external third-party sites."
+                    />
+                </p>
+            </div>
+        </section>
+    </article>
+</BaseLayout>

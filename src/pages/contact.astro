@@ -1,0 +1,93 @@
+---
+// src/pages/contact.astro
+import Button from '../components/Button.astro';
+import T from '../components/T.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Contacto | Agustín Rojas"
+    description="Contacta a Agustín Rojas para diagnósticos actuariales y de datos sin cargo, o intercambio académico."
+>
+    <div class="py-8">
+        <header class="mb-12">
+            <h1 class="text-3xl font-serif font-bold mb-4 sm:text-5xl leading-tight">
+                <T es="Hablemos" en="Let's Connect" />
+            </h1>
+            <p class="text-lg opacity-85 max-w-2xl leading-relaxed">
+                <T
+                    es="Ya sea que necesites resolver un problema cuantitativo en tu organización o quieras debatir sobre modelos actuariales e investigación, el canal está abierto."
+                    en="Whether you need to solve a quantitative challenge in your organization or wish to discuss actuarial models and research, my inbox is open."
+                />
+            </p>
+        </header>
+
+        <!-- Opciones de Contacto Principales -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Tarjeta 1: Diagnóstico Corporativo & Propuesta -->
+            <div
+                class="border border-[var(--border-color-main)]/20 rounded-2xl p-6 sm:p-8 flex flex-col justify-between bg-main/5 hover:border-[var(--border-color-main)]/50 transition-all"
+            >
+                <div>
+                    <div class="text-3xl mb-4">📊</div>
+                    <h2 class="text-xl font-serif font-semibold mb-3">
+                        <T es="Diagnóstico & Propuesta Sin Cargo" en="Free Assessment & Proposal" />
+                    </h2>
+                    <p class="text-sm opacity-80 leading-relaxed mb-6">
+                        <T
+                            es="Analizamos la situación técnica de tu empresa o equipo (tarificación, reservas, automatización de planillas en SQL/Python o tableros de BI). Elaboro un diagnóstico preliminar y una propuesta de valor sin costo ni compromiso."
+                            en="We evaluate your organization's technical needs (pricing, reserving, workflow automation in SQL/Python, or BI executive dashboards). I deliver a preliminary assessment and actionable proposal at no cost."
+                        />
+                    </p>
+                </div>
+                <Button
+                    href="mailto:agustinsilviorojas@outlook.com.ar?subject=Consulta%20Profesional%20-%20Diagn%C3%B3stico%20Sin%20Cargo"
+                    class="w-full text-center"
+                >
+                    <T es="Solicitar diagnóstico →" en="Request free assessment →" />
+                </Button>
+            </div>
+
+            <!-- Tarjeta 2: Intercambio Académico & Investigación -->
+            <div
+                class="border border-[var(--border-color-main)]/20 rounded-2xl p-6 sm:p-8 flex flex-col justify-between bg-main/5 hover:border-[var(--border-color-main)]/50 transition-all"
+            >
+                <div>
+                    <div class="text-3xl mb-4">🎓</div>
+                    <h2 class="text-xl font-serif font-semibold mb-3">
+                        <T es="Debate Académico & Investigación" en="Academic & Technical Discussion" />
+                    </h2>
+                    <p class="text-sm opacity-80 leading-relaxed mb-6">
+                        <T
+                            es="Espacio abierto para colegas, estudiantes y docentes interesados en debatir sobre ciencias actuariales, solvencia regulatoria, reaseguro, análisis cuantitativo o papers y publicaciones técnicas."
+                            en="Open exchange for peers, researchers, and students interested in discussing actuarial science, regulatory solvency, reinsurance treaties, quantitative finance, or technical papers."
+                        />
+                    </p>
+                </div>
+                <Button href="https://www.linkedin.com/in/agustinsilviorojas/" class="w-full text-center" target="_blank" rel="noopener noreferrer">
+                    <T es="Conectar en LinkedIn →" en="Connect on LinkedIn →" />
+                </Button>
+            </div>
+        </div>
+
+        <!-- Canales Directos -->
+        <div class="border-t border-[var(--border-color-main)]/15 pt-8">
+            <h3 class="text-sm uppercase tracking-wider opacity-60 mb-4 font-semibold">
+                <T es="Canales de contacto directo" en="Direct Communication Channels" />
+            </h3>
+            <div class="flex flex-wrap gap-6 text-sm">
+                <a href="mailto:agustinsilviorojas@outlook.com.ar" class="hover:underline underline-offset-4 flex items-center gap-2">
+                    <span>✉️</span> agustinsilviorojas@outlook.com.ar
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/agustinsilviorojas/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline underline-offset-4 flex items-center gap-2"
+                >
+                    <span>🔗</span> LinkedIn / agustinsilviorojas
+                </a>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
