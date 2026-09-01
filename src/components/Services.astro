@@ -1,76 +1,114 @@
 ---
 // src/components/Services.astro
+import T from './T.astro';
 
 const services = [
     {
         icon: '🛡️',
-        title: 'Consultoría Actuarial & Tarificación',
-        subtitle: 'Actuarial & Quantitative Consulting',
-        description: 'Diseño y evaluación económica-financiera de contratos contingentes. Desarrollo de modelos de tarificación y estimación de reservas.',
-        tags: ['Tarificación', 'Contratos Contingentes', 'Seguros'],
-        benefit: 'Protección de la rentabilidad y gestión adecuada del riesgo operativo.'
+        title_es: 'Consultoría Actuarial & Tarificación',
+        title_en: 'Actuarial Consulting & Pricing',
+        subtitle_es: 'Contratos Contingentes & Reservas',
+        subtitle_en: 'Contingent Contracts & Reserves',
+        desc_es: 'Diseño y evaluación económica-financiera de contratos contingentes. Desarrollo de modelos de tarificación y estimación de reservas.',
+        desc_en: 'Economic and financial valuation of contingent contracts. Development of pricing models and loss reserve estimations.',
+        tags: ['Tarificación / Pricing', 'Seguros / Insurance', 'Reservas'],
+        benefit_es: 'Protección de la rentabilidad y gestión adecuada del riesgo operativo.',
+        benefit_en: 'Profitability protection and robust management of operational risk.'
     },
     {
         icon: '📈',
-        title: 'Gestión de Riesgos & Estrategia Financiera',
-        subtitle: 'Risk Management & Financial Strategy',
-        description:
+        title_es: 'Gestión de Riesgos & Estrategia Financiera',
+        title_en: 'Risk Management & Financial Strategy',
+        subtitle_es: 'Modelado Cuantitativo & Portafolios',
+        subtitle_en: 'Quantitative Modeling & Portfolios',
+        desc_es:
             'Modelos actuariales y estadísticos para reportes, proyecciones financieras y asesoramiento en estrategias de inversión, ahorro y análisis de portafolios.',
+        desc_en: 'Actuarial and statistical modeling for executive reporting, financial projections, investment strategies, and portfolio analytics.',
         tags: ['Modelos Estadísticos', 'Capital', 'Proyecciones'],
-        benefit: 'Optimización de la solvencia y mitigación de pérdidas no planificadas.'
+        benefit_es: 'Optimización de la solvencia y mitigación de pérdidas no planificadas.',
+        benefit_en: 'Solvency optimization and mitigation of unplanned capital losses.'
     },
     {
         icon: '📊',
-        title: 'Business Intelligence & Tableros de Control',
-        subtitle: 'Business Intelligence & Executive Dashboards',
-        description: 'Diseño de paneles de control interactivos y reportes ejecutivos automatizados para el monitoreo en tiempo real de indicadores clave.',
+        title_es: 'Business Intelligence & Tableros de Control',
+        title_en: 'Business Intelligence & Dashboards',
+        subtitle_es: 'Monitoreo Ejecutivo en Tiempo Real',
+        subtitle_en: 'Real-Time Executive Monitoring',
+        desc_es: 'Diseño de paneles de control interactivos y reportes ejecutivos automatizados para el monitoreo en tiempo real de indicadores clave.',
+        desc_en: 'Design of interactive dashboards and automated executive reporting for real-time monitoring of key performance indicators.',
         tags: ['Indicadores Clave', 'Reportes Ejecutivos', 'BI'],
-        benefit: 'Toma de decisiones estratégicas basada en análisis cuantitativo riguroso.'
+        benefit_es: 'Toma de decisiones estratégicas basada en análisis cuantitativo riguroso.',
+        benefit_en: 'Strategic decision-making powered by rigorous quantitative analysis.'
     },
     {
         icon: '⚙️',
-        title: 'Automatización & Arquitectura de Datos',
-        subtitle: 'Process Automation & Data Architecture',
-        description:
+        title_es: 'Automatización & Arquitectura de Datos',
+        title_en: 'Process Automation & Data Architecture',
+        subtitle_es: 'Pipelines & Bases Relacionales',
+        subtitle_en: 'Pipelines & Relational Databases',
+        desc_es:
             'Conversión de procesos manuales y planillas frágiles en sistemas automatizados, auditables y estructurados sobre bases de datos relacionales.',
+        desc_en: 'Conversion of manual, spreadsheet-heavy workflows into automated, fully auditable systems built on relational databases.',
         tags: ['ETL / Pipelines', 'Bases de Datos', 'Optimización'],
-        benefit: 'Eficiencia operativa, eliminación de errores humanos y escalabilidad.'
+        benefit_es: 'Eficiencia operativa, eliminación de errores humanos y escalabilidad.',
+        benefit_en: 'Operational efficiency, elimination of human errors, and scalable workflows.'
     }
 ];
 
 const benefits = [
-    { title: 'Gestión Financiera & de Riesgos', desc: 'Optimización continua respaldada en evidencia matemática.' },
-    { title: 'Decisiones Basadas en Datos', desc: 'Reducción de la incertidumbre en operaciones complejas.' },
-    { title: 'Eficiencia Operativa', desc: 'Automatización de procesos repetitivos y reportes masivos.' }
+    {
+        title_es: 'Gestión Financiera & de Riesgos',
+        title_en: 'Financial & Risk Management',
+        desc_es: 'Optimización continua respaldada en evidencia matemática.',
+        desc_en: 'Continuous optimization backed by mathematical rigor.'
+    },
+    {
+        title_es: 'Decisiones Basadas en Datos',
+        title_en: 'Data-Driven Decisions',
+        desc_es: 'Reducción de la incertidumbre en operaciones complejas.',
+        desc_en: 'Uncertainty reduction across high-stakes business operations.'
+    },
+    {
+        title_es: 'Eficiencia Operativa',
+        title_en: 'Operational Efficiency',
+        desc_es: 'Automatización de procesos repetitivos y reportes masivos.',
+        desc_en: 'Automation of repetitive manual workflows and mass reporting.'
+    }
 ];
 ---
 
 <section id="servicios" class="services-section">
     <div class="container">
-        <!-- Encabezado -->
         <div class="section-header">
-            <h2>Servicios & Consultoría</h2>
+            <h2>
+                <T es="Servicios & Consultoría" en="Services & Consulting" />
+            </h2>
             <p>
-                Soluciones cuantitativas, actuariales y tecnológicas diseñadas para transformar datos complejos en decisiones estratégicas y procesos
-                eficientes.
+                <T
+                    es="Soluciones cuantitativas, actuariales y tecnológicas diseñadas para transformar datos complejos en decisiones estratégicas y procesos eficientes."
+                    en="Quantitative, actuarial, and technology solutions designed to transform complex data into strategic decisions and automated workflows."
+                />
             </p>
         </div>
 
-        <!-- Banner de Beneficios Ejecutivos -->
+        <!-- Banner de Beneficios -->
         <div class="benefits-banner">
             {
                 benefits.map((b) => (
                     <div class="benefit-item">
                         <span class="check-icon">✓</span>
                         <div>
-                            <strong>{b.title}:</strong> {b.desc}
+                            <strong>
+                                <T es={b.title_es} en={b.title_en} />:
+                            </strong>{' '}
+                            <T es={b.desc_es} en={b.desc_en} />
                         </div>
                     </div>
                 ))
             }
         </div>
 
-        <!-- Grid de Tarjetas de Servicios -->
+        <!-- Grid de Tarjetas -->
         <div class="services-grid">
             {
                 services.map((service) => (
@@ -84,12 +122,21 @@ const benefits = [
                             </div>
                         </div>
 
-                        <h3>{service.title}</h3>
-                        <span class="subtitle">{service.subtitle}</span>
-                        <p class="description">{service.description}</p>
+                        <h3>
+                            <T es={service.title_es} en={service.title_en} />
+                        </h3>
+                        <span class="subtitle">
+                            <T es={service.subtitle_es} en={service.subtitle_en} />
+                        </span>
+                        <p class="description">
+                            <T es={service.desc_es} en={service.desc_en} />
+                        </p>
 
                         <div class="card-footer">
-                            <strong>Impacto:</strong> {service.benefit}
+                            <strong>
+                                <T es="Impacto" en="Impact" />:
+                            </strong>{' '}
+                            <T es={service.benefit_es} en={service.benefit_en} />
                         </div>
                     </div>
                 ))
@@ -102,23 +149,19 @@ const benefits = [
     .services-section {
         padding: 4rem 1.5rem;
     }
-
     .container {
         max-width: 1100px;
         margin: 0 auto;
     }
-
     .section-header {
         text-align: center;
         margin-bottom: 2.5rem;
     }
-
     .section-header h2 {
         font-size: 2.25rem;
         font-weight: 700;
         margin-bottom: 0.75rem;
     }
-
     .section-header p {
         opacity: 0.85;
         font-size: 1.1rem;
@@ -126,8 +169,6 @@ const benefits = [
         margin: 0 auto;
         line-height: 1.6;
     }
-
-    /* Banner de Beneficios */
     .benefits-banner {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -138,26 +179,21 @@ const benefits = [
         padding: 1.25rem;
         margin-bottom: 3rem;
     }
-
     .benefit-item {
         display: flex;
         align-items: flex-start;
         gap: 0.75rem;
         font-size: 0.95rem;
     }
-
     .check-icon {
         color: #3b82f6;
         font-weight: bold;
     }
-
-    /* Grid y Tarjetas */
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.75rem;
     }
-
     .service-card {
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -167,30 +203,25 @@ const benefits = [
         flex-direction: column;
         transition: all 0.3s ease;
     }
-
     .service-card:hover {
         transform: translateY(-4px);
         border-color: rgba(59, 130, 246, 0.4);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
-
     .card-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.25rem;
     }
-
     .service-icon {
         font-size: 2.2rem;
     }
-
     .tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.4rem;
     }
-
     .tag {
         font-size: 0.75rem;
         background: rgba(255, 255, 255, 0.06);
@@ -198,20 +229,17 @@ const benefits = [
         border-radius: 20px;
         opacity: 0.8;
     }
-
     .service-card h3 {
         font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 0.2rem;
     }
-
     .subtitle {
         font-size: 0.85rem;
         opacity: 0.5;
         margin-bottom: 1rem;
         display: block;
     }
-
     .description {
         font-size: 0.95rem;
         line-height: 1.55;
@@ -219,7 +247,6 @@ const benefits = [
         margin-bottom: 1.5rem;
         flex-grow: 1;
     }
-
     .card-footer {
         border-top: 1px solid rgba(255, 255, 255, 0.06);
         padding-top: 1rem;

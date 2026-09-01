@@ -1,29 +1,24 @@
 ---
-import { marked } from 'marked';
-import siteConfig from '../data/site-config';
+// src/components/Hero.astro
 import Button from './Button.astro';
-
-const hero = siteConfig.hero;
+import T from './T.astro';
 ---
 
-{
-    (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
-        <section class="w-full flex flex-col gap-8 mb-16 sm:mb-24">
-            {hero.title && <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{hero.title}</h1>}
-            {hero.image?.src && (
-                <figure>
-                    <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
-                    {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{hero.image.caption}</figcaption>}
-                </figure>
-            )}
-            {hero.text && <div class="max-w-none prose sm:prose-lg" set:html={marked.parse(hero.text)} />}
-            {hero.actions && hero.actions.length > 0 && (
-                <div class="flex flex-wrap gap-4">
-                    {hero.actions.map((action) => (
-                        <Button href={action.href}>{action.text}</Button>
-                    ))}
-                </div>
-            )}
-        </section>
-    )
-}
+<section class="w-full flex flex-col gap-6 mb-16 sm:mb-24">
+    <h1 class="text-3xl font-serif font-medium sm:text-5xl leading-tight">
+        <T es="Consultoría Actuarial & Análisis de Datos" en="Actuarial Consulting & Data Analytics" />
+    </h1>
+
+    <p class="text-lg leading-relaxed opacity-90">
+        <T
+            es="Actuario enfocado en el modelado cuantitativo de riesgos, tarificación, optimización de bases de datos relacionales y soluciones de Business Intelligence."
+            en="Actuary focused on quantitative risk modeling, pricing, relational database architecture, and executive Business Intelligence solutions."
+        />
+    </p>
+
+    <div class="flex flex-wrap gap-4 mt-2">
+        <Button href="/about">
+            <T es="Conocer más sobre mí →" en="Learn more about me →" />
+        </Button>
+    </div>
+</section>

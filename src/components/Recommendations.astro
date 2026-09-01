@@ -1,27 +1,43 @@
 ---
 // src/components/Recommendations.astro
+import T from './T.astro';
 
 const recommendations = [
     {
         name: 'Guillermo D. Coccoz',
-        role: 'Dir. Ejecutivo de Control de Gestión y Administración',
+        role_es: 'Dir. Ejecutivo de Control de Gestión y Administración',
+        role_en: 'Executive Director of Management Control & Administration',
         image: '/Guillermo_coccoz.png',
-        highlight: 'Un profesional al cual recomiendo sin reparo alguno. Alcanzó los mayores niveles de desempeño esperables.',
-        text: 'Agustín es un profesional al cual recomiendo sin reparo alguno. Ha cumplido con éxito todas las etapas del plan de capacitación y entrenamiento previsto en nuestro Programa de Jóvenes Profesionales alcanzando los mayores niveles de desempeño esperables. También ha adquirido una invalorable experiencia trabajando en una organización compleja, poniendo a prueba sus capacidades de gestión y su inteligencia emocional.'
+        highlight_es: 'Un profesional al cual recomiendo sin reparo alguno. Alcanzó los mayores niveles de desempeño esperables.',
+        highlight_en: 'A professional whom I recommend without reservation. He achieved the highest expected performance levels.',
+        text_es:
+            'Agustín es un profesional al cual recomiendo sin reparo alguno. Ha cumplido con éxito todas las etapas del plan de capacitación y entrenamiento previsto en nuestro Programa de Jóvenes Profesionales alcanzando los mayores niveles de desempeño esperables. También ha adquirido una invalorable experiencia trabajando en una organización compleja, poniendo a prueba sus capacidades de gestión y su inteligencia emocional.',
+        text_en:
+            'Agustín is a professional whom I recommend without reservation. He successfully fulfilled all milestones in our Young Professionals Program, achieving the highest performance levels while proving his management and emotional intelligence skills in a complex corporate structure.'
     },
     {
         name: 'Verónica Martino',
-        role: 'Gerente en Gestión del Talento',
+        role_es: 'Gerente en Gestión del Talento',
+        role_en: 'Talent Management Leader',
         image: '/Veronica_martino.png',
-        highlight: 'Enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca.',
-        text: 'Tuve la oportunidad de acompañar a Agustín durante su paso por el Programa de Jóvenes Profesionales de GrupoST, donde demostró una enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca. Siempre con ganas de crecer e ir por más, lo cual será sin dudas el motor clave en su crecimiento profesional.'
+        highlight_es: 'Enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca.',
+        highlight_en: 'Outstanding eagerness to learn and deliver high value from a fresh, curious perspective.',
+        text_es:
+            'Tuve la oportunidad de acompañar a Agustín durante su paso por el Programa de Jóvenes Profesionales de GrupoST, donde demostró una enorme disposición por aprender y aportar valor desde una mirada curiosa y fresca. Siempre con ganas de crecer e ir por más, lo cual será sin dudas el motor clave en su crecimiento profesional.',
+        text_en:
+            'I had the pleasure of mentoring Agustín during his journey through our Young Professionals Program, where he demonstrated remarkable drive to learn and contribute value through a curious and innovative mindset. His ambition to continually improve will undoubtedly drive his professional career.'
     },
     {
         name: 'Jessica Viola',
-        role: 'Pricing Actuary',
+        role_es: 'Pricing Actuary',
+        role_en: 'Pricing Actuary',
         image: '/Jessica_viola.png',
-        highlight: 'Aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.',
-        text: 'En el tiempo que trabajé con Agustín, demostró proactividad, muchas ganas de aprender y predisposición para colaborar. Siempre mostró curiosidad por entender los temas, aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.'
+        highlight_es: 'Aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.',
+        highlight_en: 'Contributed valuable insights and his drive fostered an exceptional team atmosphere.',
+        text_es:
+            'En el tiempo que trabajé con Agustín, demostró proactividad, muchas ganas de aprender y predisposición para colaborar. Siempre mostró curiosidad por entender los temas, aportó ideas y su motivación generaba un muy buen clima de trabajo en equipo.',
+        text_en:
+            'Throughout our collaborative work, Agustín demonstrated great proactivity, strong analytical curiosity, and willingness to assist. He consistently contributed actionable ideas and positive energy to the team.'
     }
 ];
 ---
@@ -29,8 +45,15 @@ const recommendations = [
 <section id="recomendaciones" class="recommendations-section">
     <div class="container">
         <div class="section-header">
-            <h2>Recomendaciones & Endosos</h2>
-            <p>Testimonios de directivos, gerentes y colegas técnicos con quienes he compartido proyectos y equipos de trabajo.</p>
+            <h2>
+                <T es="Recomendaciones & Endosos" en="Recommendations & Endorsements" />
+            </h2>
+            <p>
+                <T
+                    es="Testimonios de directivos, gerentes y colegas técnicos con quienes he compartido proyectos y equipos de trabajo."
+                    en="Endorsements from executives, managers, and technical peers with whom I have collaborated on key initiatives."
+                />
+            </p>
         </div>
 
         <div class="recommendations-grid">
@@ -43,18 +66,24 @@ const recommendations = [
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.871h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                Verificado
+                                <T es="Verificado" en="Verified" />
                             </span>
                         </div>
 
-                        <p class="highlight">"{item.highlight}"</p>
-                        <p class="full-text">{item.text}</p>
+                        <p class="highlight">
+                            "<T es={item.highlight_es} en={item.highlight_en} />"
+                        </p>
+                        <p class="full-text">
+                            <T es={item.text_es} en={item.text_en} />
+                        </p>
 
                         <div class="author-info">
                             <img src={item.image} alt={item.name} class="author-img" />
                             <div class="author-details">
                                 <strong>{item.name}</strong>
-                                <span class="role">{item.role}</span>
+                                <span class="role">
+                                    <T es={item.role_es} en={item.role_en} />
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -68,36 +97,30 @@ const recommendations = [
     .recommendations-section {
         padding: 4rem 1.5rem;
     }
-
     .container {
         max-width: 1100px;
         margin: 0 auto;
     }
-
     .section-header {
         text-align: center;
         margin-bottom: 3rem;
     }
-
     .section-header h2 {
         font-size: 2.25rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
     }
-
     .section-header p {
         opacity: 0.85;
         font-size: 1.1rem;
         max-width: 650px;
         margin: 0 auto;
     }
-
     .recommendations-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.75rem;
     }
-
     .testimonial-card {
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -110,26 +133,22 @@ const recommendations = [
             transform 0.3s ease,
             border-color 0.3s ease;
     }
-
     .testimonial-card:hover {
         transform: translateY(-4px);
         border-color: rgba(59, 130, 246, 0.4);
     }
-
     .card-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1rem;
     }
-
     .quote-icon {
         font-size: 2.5rem;
         line-height: 1;
         opacity: 0.3;
         font-family: Georgia, serif;
     }
-
     .linkedin-badge {
         display: inline-flex;
         align-items: center;
@@ -141,7 +160,6 @@ const recommendations = [
         border-radius: 20px;
         font-weight: 600;
     }
-
     .highlight {
         font-size: 1.05rem;
         font-weight: 600;
@@ -149,7 +167,6 @@ const recommendations = [
         margin-bottom: 1rem;
         color: #e2e8f0;
     }
-
     .full-text {
         font-size: 0.9rem;
         line-height: 1.6;
@@ -157,7 +174,6 @@ const recommendations = [
         margin-bottom: 1.75rem;
         flex-grow: 1;
     }
-
     .author-info {
         display: flex;
         align-items: center;
@@ -165,7 +181,6 @@ const recommendations = [
         border-top: 1px solid rgba(255, 255, 255, 0.06);
         padding-top: 1.25rem;
     }
-
     .author-img {
         width: 52px;
         height: 52px;
@@ -173,17 +188,14 @@ const recommendations = [
         object-fit: cover;
         border: 2px solid rgba(255, 255, 255, 0.15);
     }
-
     .author-details {
         display: flex;
         flex-direction: column;
     }
-
     .author-details strong {
         font-size: 0.95rem;
         font-weight: 600;
     }
-
     .role {
         font-size: 0.8rem;
         opacity: 0.8;

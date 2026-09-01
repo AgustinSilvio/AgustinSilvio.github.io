@@ -7,6 +7,7 @@ import PostPreview from '../../components/PostPreview.astro';
 import Subscribe from '../../components/Subscribe.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 import { slugify } from '../../utils/common-utils';
+import T from '../../components/T.astro';
 
 export async function getStaticPaths() {
     const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
@@ -21,40 +22,61 @@ export async function getStaticPaths() {
     }));
 }
 
-type Props = { post: CollectionEntry<'blog'>; prevPost: CollectionEntry<'blog'>; nextPost: CollectionEntry<'blog'> };
+type Props = {
+    post: CollectionEntry<'blog'>;
+    prevPost: CollectionEntry<'blog'> | null;
+    nextPost: CollectionEntry<'blog'> | null;
+};
 
 const { href } = Astro.url;
 const { post, prevPost, nextPost } = Astro.props;
-const { title, publishDate, updatedDate, excerpt, tags = [], seo } = post.data;
+
+const data = post.data as Record<string, any>;
+const { publishDate, updatedDate, excerpt, tags = [], seo, linkedinUrl } = data;
+const title_es = data.title_es || data.title;
+const title_en = data.title_en || data.title;
+const desc_es = data.description_es || data.description || excerpt;
+const desc_en = data.description_en || data.description || excerpt;
+
+const targetShareUrl = linkedinUrl || href;
+const isLinkedIn = Boolean(linkedinUrl);
+
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} image={seo?.image} pageType="article" showHeader={false}>
+<BaseLayout
+    title={seo?.title ?? `${title_es} | Agustín Rojas`}
+    description={seo?.description ?? desc_es}
+    image={seo?.image}
+    pageType="article"
+    showHeader={false}
+>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
-            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
-            <div class="mt-4 text-sm">
+            <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">
+                <T es={title_es} en={title_en} />
+            </h1>
+            <div class="mt-4 text-sm opacity-70 flex items-center gap-2">
                 <FormattedDate date={publishDate} />
                 {
                     updatedDate && (
-                        <>
-                            {' '}
-                            <span>
-                                (Updated on <FormattedDate date={updatedDate} />)
-                            </span>
-                        </>
+                        <span>
+                            (<T es="Actualizado el" en="Updated on" /> <FormattedDate date={updatedDate} />)
+                        </span>
                     )
                 }
             </div>
         </header>
+
         <div class="max-w-none prose sm:prose-lg">
             <Content />
         </div>
-        <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between sm:mt-12 sm:text-base">
+
+        <div class="mt-8 flex flex-wrap items-center gap-6 text-sm justify-between sm:mt-12 sm:text-base border-t border-[var(--border-color-main)]/15 pt-6">
             {
                 tags.length > 0 && (
                     <div class="flex flex-wrap gap-x-5 gap-y-1 text-sm">
-                        {tags.map((tag) => (
+                        {tags.map((tag: string) => (
                             <a class="text-main hover:underline" href={`/tags/${slugify(tag)}`}>
                                 #{tag}
                             </a>
@@ -62,39 +84,81 @@ const { Content } = await render(post);
                     </div>
                 )
             }
-            <Button class="copy-url-button" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">Share</Button>
+
+            <div class="flex items-center gap-3">
+                {
+                    linkedinUrl && (
+                        <a
+                            href={linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-md border border-[#0a66c2]/40 text-[#0a66c2] bg-[#0a66c2]/5 hover:bg-[#0a66c2]/10 transition-colors"
+                        >
+                            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.871h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                            </svg>
+                            <T es="Ver en LinkedIn" en="View on LinkedIn" />
+                        </a>
+                    )
+                }
+
+                <Button
+                    class="copy-url-button cursor-pointer"
+                    aria-label="Copy link"
+                    data-url={targetShareUrl}
+                    data-is-linkedin={isLinkedIn ? 'true' : 'false'}
+                >
+                    <span class="btn-text">
+                        {isLinkedIn ? <T es="Copiar post de LinkedIn" en="Copy LinkedIn link" /> : <T es="Compartir enlace" en="Share link" />}
+                    </span>
+                </Button>
+            </div>
         </div>
     </article>
+
     {
         (prevPost || nextPost) && (
-            <div class="my-16 sm:my-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Read Next</h2>
+            <div class="my-16 sm:my-24 border-t border-[var(--border-color-main)]/15 pt-12">
+                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">
+                    <T es="Seguir leyendo" en="Read Next" />
+                </h2>
                 {nextPost && <PostPreview post={nextPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
                 {prevPost && <PostPreview post={prevPost} class="mb-10 sm:mb-12" headingLevel="h3" />}
             </div>
         )
     }
+
     <Subscribe class="my-16 sm:my-24" />
 </BaseLayout>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
+    function setupShareButton() {
         const copyUrlButton = document.querySelector('.copy-url-button') as HTMLButtonElement;
-        copyUrlButton?.addEventListener('click', async () => {
-            await copyUrl(copyUrlButton);
-        });
+        if (!copyUrlButton) return;
 
-        async function copyUrl(button: HTMLButtonElement) {
-            let url = button.getAttribute('data-url') || '';
-            let label = button.innerText;
+        copyUrlButton.addEventListener('click', async () => {
+            const url = copyUrlButton.getAttribute('data-url') || window.location.href;
+            const isLinkedIn = copyUrlButton.getAttribute('data-is-linkedin') === 'true';
+            const textSpan = copyUrlButton.querySelector('.btn-text');
+            if (!textSpan) return;
+
+            const originalHTML = textSpan.innerHTML;
+            const isEs = document.documentElement.getAttribute('lang') === 'es';
 
             await navigator.clipboard.writeText(url);
 
-            button.innerText = 'Copied';
+            if (isLinkedIn) {
+                textSpan.textContent = isEs ? '¡Enlace de LinkedIn copiado!' : 'LinkedIn link copied!';
+            } else {
+                textSpan.textContent = isEs ? '¡Enlace copiado!' : 'Link copied!';
+            }
 
             setTimeout(() => {
-                button.innerText = label;
+                textSpan.innerHTML = originalHTML;
             }, 2500);
-        }
-    });
+        });
+    }
+
+    document.addEventListener('astro:page-load', setupShareButton);
+    setupShareButton();
 </script>

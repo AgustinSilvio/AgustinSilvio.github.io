@@ -1,16 +1,18 @@
 ---
+// src/pages/blog/[...page].astro
 import type { GetStaticPathsOptions, Page } from 'astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
 import Pagination from '../../components/Pagination.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Subscribe from '../../components/Subscribe.astro';
+import T from '../../components/T.astro';
 import siteConfig from '../../data/site-config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
-    return paginate(posts, { pageSize: siteConfig.postsPerPage || 4 });
+    return paginate(posts, { pageSize: siteConfig.postsPerPage || 6 });
 }
 
 type Props = { page: Page<CollectionEntry<'blog'>> };
@@ -20,13 +22,28 @@ const blog = page.data;
 ---
 
 <BaseLayout
-    title="Blog"
-    description="Embark on a journey of personal insights and experiences through my blog"
-    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+    title="Artículos & Publicaciones | Agustín Rojas"
+    description="Artículos sobre ciencias actuariales, gestión de riesgos, reaseguro y análisis cuantitativo de datos."
     showHeader={false}
 >
-    <h1 class="mb-12 text-2xl leading-tight font-serif italic sm:mb-16 sm:text-4xl">Blog Archive</h1>
-    {blog.map((post) => <PostPreview post={post} class="mb-10 sm:mb-12" />)}
-    <Pagination page={page} class="my-16 sm:my-24" />
-    <Subscribe class="my-16 sm:my-24" />
+    <div class="py-4">
+        <header class="mb-12 sm:mb-16">
+            <h1 class="text-3xl leading-tight font-serif font-medium mb-3 sm:text-5xl sm:leading-tight">
+                <T es="Artículos & Publicaciones" en="Writing & Articles" />
+            </h1>
+            <p class="text-lg opacity-85 leading-relaxed">
+                <T
+                    es="Reflexiones, análisis técnicos y metodologías sobre modelado actuarial, transferencia de riesgo, tarificación y analítica de datos."
+                    en="Insights, technical notes, and frameworks on actuarial modeling, risk transfer, pricing, and data analytics."
+                />
+            </p>
+        </header>
+
+        <div class="flex flex-col gap-8">
+            {blog.map((post) => <PostPreview post={post} class="border-b border-[var(--border-color-main)]/15 pb-8" />)}
+        </div>
+
+        <Pagination page={page} class="my-16 sm:my-24" />
+        <Subscribe class="my-16 sm:my-24" />
+    </div>
 </BaseLayout>

@@ -1,24 +1,42 @@
 ---
-import { type CollectionEntry } from 'astro:content';
-import ArrowRight from '../icons/ArrowRight.astro';
+// src/components/ProjectPreview.astro
+import type { HTMLTag, Polymorphic } from 'astro/types';
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+import T from './T.astro';
 
-type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{ as: Tag }> & {
+    project: CollectionEntry<'projects'>;
+    headingLevel?: 'h2' | 'h3';
+};
 
-const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, description } = project.data;
-const TitleTag = headingLevel;
+const { project, as: Tag = 'div', headingLevel = 'h2', class: className, ...props } = Astro.props;
+const HeadingTag = headingLevel;
+
+// Lectura de campos con soporte bilingüe
+const data = project.data as Record<string, any>;
+const title_es = (data.title_es as string) || data.title;
+const title_en = (data.title_en as string) || data.title;
+const desc_es = (data.description_es as string) || data.description || '';
+const desc_en = (data.description_en as string) || data.description || '';
 ---
 
-<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/projects/${project.id}/`}>
-    <div class="grow">
-        <TitleTag
-            class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
-        >
-            {title}
-        </TitleTag>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
-    </div>
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        View Project <ArrowRight class="fill-current w-4 h-4" />
-    </div>
-</a>
+<Tag class:list={['group', className]} {...props}>
+    <a class="flex flex-col gap-1.5" href={`/projects/${project.id}/`}>
+        <div class="flex items-baseline justify-between gap-4">
+            <HeadingTag class="text-lg font-serif font-medium group-hover:underline group-hover:underline-offset-2">
+                <T es={title_es} en={title_en} />
+            </HeadingTag>
+            <span class="text-xs opacity-60 shrink-0">
+                <FormattedDate date={project.data.publishDate} />
+            </span>
+        </div>
+        {
+            (desc_es || desc_en) && (
+                <p class="text-sm opacity-80 line-clamp-2 leading-relaxed">
+                    <T es={desc_es} en={desc_en} />
+                </p>
+            )
+        }
+    </a>
+</Tag>

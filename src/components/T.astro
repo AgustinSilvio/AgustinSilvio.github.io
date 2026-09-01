@@ -1,0 +1,11 @@
+---
+// src/components/T.astro
+interface Props {
+    es: string;
+    en: string;
+}
+
+const { es, en } = Astro.props;
+---
+
+<span class="lang-es">{es}</span><span class="lang-en">{en}</span>

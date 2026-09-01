@@ -109,3 +109,12 @@ html.dark {
         hyphens: auto;
     }
 }
+    /* Control de visibilidad para multi-idioma */
+html[lang="es"] .lang-en,
+html:not([lang="en"]) .lang-en {
+    display: none !important;
+}
+
+html[lang="en"] .lang-es {
+    display: none !important;
+}

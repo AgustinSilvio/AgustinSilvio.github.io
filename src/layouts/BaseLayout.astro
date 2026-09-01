@@ -20,6 +20,10 @@ const { showHeader = true, ...head } = Astro.props;
             }
         </script>
         <ClientRouter />
+        <script is:inline>
+            const savedLang = localStorage.getItem('site_lang') || 'es';
+            document.documentElement.setAttribute('lang', savedLang);
+        </script>
     </head>
     <body class="bg-main text-main">
         <div class="flex flex-col min-h-screen px-4 md:px-8">

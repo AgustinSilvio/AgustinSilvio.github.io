@@ -1,0 +1,93 @@
+---
+// src/pages/about.astro
+import T from '../components/T.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Me | Agustín Rojas" description="Consultoría actuarial, gestión de riesgos y análisis cuantitativo de datos.">
+    <article class="prose max-w-none py-8">
+        <div class="mb-8 overflow-hidden rounded-xl border border-[var(--border-color-main)]">
+            <img src="/aventura.jpeg" alt="Agustín Rojas - Trekking & Outdoor" class="w-full h-80 object-cover m-0" />
+        </div>
+
+        <h1 class="text-3xl font-serif font-bold mb-2">
+            <T es="Sobre mí" en="About Me" />
+        </h1>
+
+        <h2 class="text-xl font-medium opacity-90 mt-0 mb-6">
+            <T es="Agustín Rojas — Consultoría Actuarial & Análisis Cuantitativo" en="Agustín Rojas — Actuarial Consulting & Quantitative Analytics" />
+        </h2>
+
+        <p class="leading-relaxed">
+            <T
+                es="¡Hola! Soy Agustín Rojas, estudiante avanzado de Ciencias Actuariales con base en la Ciudad Autónoma de Buenos Aires. Mi trabajo se enfoca en conectar la rigurosidad matemática y estadística con la toma de decisiones estratégicas, la gestión de riesgos y la arquitectura de datos relacionales."
+                en="Greetings! I'm Agustín Rojas, an advanced Actuarial Science student based in Buenos Aires. My work focuses on bridging mathematical rigor and statistical modeling with strategic decision-making, risk management, and scalable relational data architecture."
+            />
+        </p>
+
+        <h3 class="text-lg font-semibold mt-8 mb-3">
+            <T es="Especialización & Propuesta de Valor" en="Expertise & Value Proposition" />
+        </h3>
+
+        <ul class="space-y-2">
+            <li>
+                <strong><T es="Modelado Actuarial & Tarificación:" en="Actuarial Modeling & Pricing:" /></strong>
+                <T
+                    es=" Evaluación financiera de contratos contingentes, estimación de reservas y cálculo de primas bajo marcos estadísticos rigurosos."
+                    en=" Valuation of contingent contracts, loss reserving, and rate-making using sound statistical methods."
+                />
+            </li>
+            <li>
+                <strong><T es="Estrategia Financiera & Riesgos:" en="Financial Risk Strategy:" /></strong>
+                <T
+                    es=" Análisis de solvencia, mitigación de pérdidas imprevistas y proyecciones dinámicas de escenarios."
+                    en=" Solvency assessment, capital loss mitigation, and dynamic scenario forecasting."
+                />
+            </li>
+            <li>
+                <strong><T es="Arquitectura de Datos & Automatización:" en="Data Architecture & Automation:" /></strong>
+                <T
+                    es=" Diseño de pipelines automatizados (ETL) sobre bases de datos relacionales y migración de planillas manuales a procesos auditables."
+                    en=" Automated data pipelines (ETL) across relational databases and migration of spreadsheet workflows into auditable systems."
+                />
+            </li>
+            <li>
+                <strong><T es="Business Intelligence:" en="Business Intelligence:" /></strong>
+                <T
+                    es=" Construcción de tableros ejecutivos interactivos para el monitoreo en tiempo real de indicadores clave de negocio."
+                    en=" Developing interactive executive dashboards for real-time tracking of core business indicators."
+                />
+            </li>
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-8 mb-3">
+            <T es="Metodología & Resolución de Problemas" en="Methodology & Problem Solving" />
+        </h3>
+
+        <p class="leading-relaxed">
+            <T
+                es="Abordo cada proyecto con curiosidad analítica y mentalidad de ingeniería. Mi objetivo es transformar la incertidumbre y los grandes volúmenes de información en procesos predecibles, escalables y orientados a generar rentabilidad y solvencia."
+                en="I approach every challenge with analytical rigor and an engineering mindset. My goal is to reduce operational uncertainty and turn complex data into clear, scalable, and business-driven strategies."
+            />
+        </p>
+
+        <h3 class="text-lg font-semibold mt-8 mb-3">
+            <T es="Contacto & Colaboración" en="Get in Touch" />
+        </h3>
+
+        <p class="leading-relaxed">
+            <T
+                es="Ya sea que busques estructurar modelos de tarificación, automatizar flujos masivos de datos o diseñar tableros de control analíticos, estaré encantado de colaborar."
+                en="Whether you are looking to optimize pricing models, automate data pipelines, or develop custom analytical dashboards, I'd be glad to collaborate."
+            />
+        </p>
+
+        <p class="italic font-serif text-lg mt-6">
+            <T es="¡Construyamos soluciones sólidas y basadas en datos!" en="Let's build something impactful together!" />
+        </p>
+
+        <div class="flex justify-center mt-10">
+            <img src="https://raw.githubusercontent.com/bornmay/bornmay/Update/svg/Bottom.svg" alt="Stats" class="max-w-full" />
+        </div>
+    </article>
+</BaseLayout>
