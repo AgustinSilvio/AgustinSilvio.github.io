@@ -14,10 +14,10 @@ const navLinks = [
 ];
 ---
 
-<nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8">
+<nav class="site-nav min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8">
     <div class="w-full max-w-3xl mx-auto relative">
         <button
-            class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-30 md:hidden"
+            class="menu-toggle cursor-pointer min-w-11 min-h-11 -ml-1 flex items-center justify-center relative z-30 md:hidden"
             aria-label="Open Menu"
             aria-expanded="false"
             aria-controls="menu-items"
@@ -39,7 +39,7 @@ const navLinks = [
             }
         </ul>
     </div>
-    <div class="absolute right-0 top-4 z-10 flex items-center gap-2 md:top-8">
+    <div class="absolute right-0 top-4 z-10 flex items-center gap-1 md:top-8 md:gap-2">
         <LanguageToggle />
         <ThemeToggle />
     </div>
@@ -48,10 +48,27 @@ const navLinks = [
 <style>
     @reference "tailwindcss";
 
+    .site-nav {
+        transition:
+            background-color 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease,
+            backdrop-filter 0.3s ease;
+        border-bottom: 1px solid transparent;
+    }
+
+    .site-nav.is-scrolled {
+        background-color: color-mix(in srgb, var(--bg-color) 84%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom-color: var(--border-color);
+        box-shadow: 0 8px 24px color-mix(in srgb, var(--text-main) 8%, transparent);
+    }
+
     @media (max-width: 767px) {
         .menu {
             @apply invisible opacity-0;
-            width: calc(100% + 1.25rem);
+            width: min(100vw - 2rem, 20rem);
         }
         .menu.is-visible {
             @apply visible opacity-100;
@@ -95,17 +112,36 @@ const navLinks = [
 </style>
 
 <script>
-    function menuToggle() {
+    function setupNavigation() {
+        const siteNav = document.querySelector<HTMLElement>('.site-nav');
         const menu = document.querySelector('.menu');
         const menuToggleBtn = document.querySelector('.menu-toggle');
-        menuToggleBtn?.addEventListener('click', () => {
+        if (!siteNav || !menu || !menuToggleBtn || siteNav.dataset.bound === 'true') return;
+
+        const updateScrollState = () => siteNav.classList.toggle('is-scrolled', window.scrollY > 20);
+        updateScrollState();
+        window.addEventListener('scroll', updateScrollState, { passive: true });
+
+        menuToggleBtn.addEventListener('click', () => {
             const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
             menuToggleBtn.classList.toggle('is-active');
             menuToggleBtn.setAttribute('aria-expanded', isMenuExpanded ? 'false' : 'true');
             menuToggleBtn.setAttribute('aria-label', isMenuExpanded ? 'Open Menu' : 'Close Menu');
             menu?.classList.toggle('is-visible');
         });
+
+        menu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                menuToggleBtn.classList.remove('is-active');
+                menuToggleBtn.setAttribute('aria-expanded', 'false');
+                menuToggleBtn.setAttribute('aria-label', 'Open Menu');
+                menu.classList.remove('is-visible');
+            });
+        });
+
+        siteNav.dataset.bound = 'true';
     }
-    menuToggle();
-    document.addEventListener('astro:after-swap', menuToggle);
+
+    setupNavigation();
+    document.addEventListener('astro:page-load', setupNavigation);
 </script>

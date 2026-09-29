@@ -8,16 +8,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+    --bg-color: #fafafa;
     --text-main: #171717;
-    --bg-main: #f2f1ec;
-    --bg-muted: #eae9e1;
-    --border-main: #171717;
+    --text-muted: #525252;
+    --accent-color: #2563eb;
+    --border-color: #e5e5e5;
+    --surface-color: #ffffff;
+
+    --bg-main: var(--bg-color);
+    --bg-muted: #f0f0f0;
+    --border-main: var(--border-color);
 }
-html.dark {
-    --text-main: #f2f1ec;
-    --bg-main: #171717;
-    --bg-muted: #242424;
-    --border-main: #f2f1ec;
+:root.dark {
+    --bg-color: #0a0a0a;
+    --text-main: #ededed;
+    --text-muted: #a3a3a3;
+    --accent-color: #3b82f6;
+    --border-color: #262626;
+    --surface-color: #171717;
+    --bg-main: var(--bg-color);
+    --bg-muted: #202020;
+    --border-main: var(--border-color);
 }
 
 /* Cyan */
@@ -56,8 +67,11 @@ html.dark {
     --font-sans: 'Inter Variable', sans-serif;
     --font-serif: 'Newsreader Variable', serif;
     --text-color-main: var(--text-main);
+    --text-color-muted: var(--text-muted);
+    --color-accent: var(--accent-color);
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
+    --background-color-surface: var(--surface-color);
     --border-color-main: var(--border-main);
 }
 
@@ -98,15 +112,45 @@ html.dark {
 }
 
 @layer base {
-    /* Evita que cualquier texto desborde su contenedor en pantallas pequeñas */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, h5, h6, p, span, a {
+    body {
+        color: var(--text-main);
+        background-color: var(--bg-color);
+        font-family: 'Inter Variable', sans-serif;
+    }
+
+    :where(button, a) {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    :where(button, a):focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 3px;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6) {
+        font-family: 'Newsreader Variable', serif;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6, p, span, a) {
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+        }
     }
 }
     /* Control de visibilidad para multi-idioma */
