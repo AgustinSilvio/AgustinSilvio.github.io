@@ -117,6 +117,14 @@ const siteConfig: SiteConfig = {
         {
             text: 'GitHub',
             href: 'https://github.com/AgustinSilvio/'
+        },
+        {
+            text: 'Instagram',
+            href: 'https://www.instagram.com/actuario.ok/'
+        },
+        {
+            text: 'YouTube',
+            href: 'https://youtube.com/@actuariales1374?si=hmWd5m5_RiIvo6W4'
         }
     ],
     postsPerPage: 8,
