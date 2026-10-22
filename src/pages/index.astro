@@ -1,5 +1,5 @@
 ---
-// src/pages/blog/index.astro
+// src/pages/index.astro
 import { getCollection } from 'astro:content';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
@@ -7,6 +7,7 @@ import PostPreview from '../components/PostPreview.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
 import Recommendations from '../components/Recommendations.astro';
 import Services from '../components/Services.astro';
+import VideoSection from '../components/VideoSection.astro';
 import T from '../components/T.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -21,6 +22,7 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
     <Hero />
+    <VideoSection />
     <Services />
     <Recommendations />
     {

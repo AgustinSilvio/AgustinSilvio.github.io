@@ -7,36 +7,66 @@ import T from './T.astro';
 const socialLinks = siteConfig.socialLinks || [];
 ---
 
-<section class="w-full flex flex-col gap-6 mb-16 sm:mb-24">
-    <h1 class="text-3xl font-serif font-medium sm:text-5xl leading-tight">
-        <T es="Consultoría Actuarial & Análisis de Datos" en="Actuarial Consulting & Data Analytics" />
-    </h1>
+<section class="w-full mb-16 sm:mb-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <!-- Columna Izquierda: Presentación y Propuesta de Valor -->
+        <div class="md:col-span-7 flex flex-col gap-5 order-2 md:order-1">
+            <div class="inline-flex items-center gap-2 self-start rounded-full border border-theme-border/40 bg-theme-bg-muted/50 px-3 py-1 text-xs font-medium text-main">
+                <span class="inline-block w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <T es="Consultoría Cuantitativa & Finanzas PyME" en="Quantitative Consulting & SME Finance" />
+            </div>
 
-    <p class="text-lg leading-relaxed opacity-90">
-        <T
-            es="Actuario enfocado en el modelado cuantitativo de riesgos, tarificación, optimización de bases de datos relacionales y soluciones de Business Intelligence."
-            en="Actuary focused on quantitative risk modeling, pricing, relational database architecture, and executive Business Intelligence solutions."
-        />
-    </p>
+            <h1 class="text-3xl font-serif font-medium sm:text-5xl leading-tight">
+                <T es="Agustín Silvio Andrés Rojas" en="Agustín Silvio Andrés Rojas" />
+            </h1>
 
-    <div class="flex flex-wrap gap-4 mt-2">
-        <Button href="/about">
-            <T es="Conocer más sobre mí →" en="Learn more about me →" />
-        </Button>
+            <p class="text-lg leading-relaxed opacity-90 text-pretty">
+                <T
+                    es="Actuario especializado en modelado cuantitativo de riesgos, tarificación y simuladores de negocios para PyMEs, clínicas y complejos deportivos. Transformo datos e incertidumbre en decisiones estratégicas y viabilidad financiera."
+                    en="Actuary specialized in quantitative risk modeling, pricing, and business viability simulators for SMEs, clinics, and sports complexes. Turning data and uncertainty into strategic decisions and financial viability."
+                />
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-1">
+                <Button href="/contact">
+                    <T es="Agendar reunión / Contacto →" en="Schedule meeting / Contact →" />
+                </Button>
+                <Button href="/about" class="opacity-80 hover:opacity-100">
+                    <T es="Sobre mí" en="About me" />
+                </Button>
+            </div>
+
+            <nav aria-label="Redes sociales" class="flex flex-wrap gap-x-5 gap-y-2 text-sm pt-2">
+                {
+                    socialLinks.map((link) => (
+                        <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex min-h-11 items-center text-main underline decoration-dashed underline-offset-4 transition hover:decoration-solid hover:text-accent"
+                        >
+                            {link.text}
+                        </a>
+                    ))
+                }
+            </nav>
+        </div>
+
+        <!-- Columna Derecha: Foto con Efecto Antigravity -->
+        <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+            <div class="antigravity relative max-w-[260px] sm:max-w-[300px] w-full">
+                <div class="relative overflow-hidden rounded-3xl border border-theme-border/30 bg-gradient-to-b from-theme-bg-muted/40 to-theme-bg-muted/10 shadow-2xl p-2 backdrop-blur-sm">
+                    <img
+                        src="/selfie-cuadro-fondo.jpg"
+                        alt="Agustín Silvio Andrés Rojas"
+                        class="w-full h-auto rounded-2xl object-cover shadow-inner transition-transform duration-500 hover:scale-[1.02]"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </div>
+                <!-- Sombra difusa debajo del objeto flotante -->
+                <div class="mx-auto mt-4 h-3 w-3/4 rounded-full bg-main/10 blur-md"></div>
+            </div>
+        </div>
     </div>
-
-    <nav aria-label="Redes sociales" class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-        {
-            socialLinks.map((link) => (
-                <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex min-h-11 items-center text-main underline decoration-dashed underline-offset-4 transition hover:decoration-solid"
-                >
-                    {link.text}
-                </a>
-            ))
-        }
-    </nav>
 </section>

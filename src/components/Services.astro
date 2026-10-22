@@ -4,41 +4,72 @@ import T from './T.astro';
 
 const services = [
     {
+        icon: '📊',
+        title_es: 'Simuladores de Negocio & Viabilidad Financiera',
+        title_en: 'Business Simulators & Financial Viability',
+        subtitle_es: 'PyMEs, Clínicas, Centros Deportivos, Centros de Salud, etc.',
+        subtitle_en: 'SMEs, Clinics, Sports Complexes, Health Centers, etc.',
+        desc_es:
+            'Modelos dinámicos y simuladores cuantitativos de viabilidad económica, punto de equilibrio y proyección de flujos de caja (Cash Flow) para centros de salud, clínicas y complejos deportivos.',
+        desc_en:
+            'Dynamic models and quantitative simulators of economic viability, breakeven points, and cash flow projections for health centers, clinics, and sports facilities.',
+        tags: ['Simuladores / Tools', 'Flujo de Fondos', 'Viabilidad PyME'],
+        benefit_es: 'Proyección precisa de rentabilidad y retorno de inversión antes de comprometer capital.',
+        benefit_en: 'Accurate projection of profitability and ROI before committing capital.'
+    },
+    {
+        icon: '⏱️',
+        title_es: 'Modelado de Capacidad & Aforo',
+        title_en: 'Capacity & Throughput Modeling',
+        subtitle_es: 'Optimización de Turnos & Flujo Operativo',
+        subtitle_en: 'Shift Optimization & Operational Flow',
+        desc_es:
+            'Análisis de aforo, teoría de colas y optimización de uso de recursos en guardias, consultorios, canchas y salas de tratamiento. Eliminación de cuellos de botella.',
+        desc_en:
+            'Capacity analysis, queuing theory, and resource utilization optimization for emergency rooms, clinics, sports courts, and treatment rooms. Eliminating operational bottlenecks.',
+        tags: ['Capacidad / Aforo', 'Optimización', 'Operaciones'],
+        benefit_es: 'Máxima utilización de instalaciones sin saturación ni demoras para los clientes.',
+        benefit_en: 'Maximum facility utilization without overcrowding or customer wait times.'
+    },
+    {
         icon: '🛡️',
-        title_es: 'Consultoría Actuarial & Tarificación',
-        title_en: 'Actuarial Consulting & Pricing',
-        subtitle_es: 'Contratos Contingentes & Reservas',
-        subtitle_en: 'Contingent Contracts & Reserves',
-        desc_es: 'Diseño y evaluación económica-financiera de contratos contingentes. Desarrollo de modelos de tarificación y estimación de reservas.',
-        desc_en: 'Economic and financial valuation of contingent contracts. Development of pricing models and loss reserve estimations.',
-        tags: ['Tarificación / Pricing', 'Seguros / Insurance', 'Reservas'],
-        benefit_es: 'Protección de la rentabilidad y gestión adecuada del riesgo operativo.',
-        benefit_en: 'Profitability protection and robust management of operational risk.'
+        title_es: 'Análisis de Estrés Operativo & Riesgo',
+        title_en: 'Operational Stress Testing & Risk',
+        subtitle_es: 'Mitigación de Riesgos para Inversores',
+        subtitle_en: 'Risk Mitigation for Investors',
+        desc_es:
+            'Pruebas de estrés ante escenarios adversos: caídas de demanda, variación de costos e inflación. Blindaje cuantitativo para comités de inversión y crédito.',
+        desc_en:
+            'Stress testing under adverse scenarios: demand shocks, cost fluctuations, and inflation. Quantitative shielding for investment and credit committees.',
+        tags: ['Stress Testing', 'Mitigación de Riesgos', 'Inversores'],
+        benefit_es: 'Respaldo técnico riguroso que genera certidumbre en socios e inversores.',
+        benefit_en: 'Rigorous technical backing that generates certainty for partners and investors.'
     },
     {
         icon: '📈',
-        title_es: 'Gestión de Riesgos & Estrategia Financiera',
-        title_en: 'Risk Management & Financial Strategy',
-        subtitle_es: 'Modelado Cuantitativo & Portafolios',
-        subtitle_en: 'Quantitative Modeling & Portfolios',
+        title_es: 'Consultoría Actuarial & Tarificación (Pricing)',
+        title_en: 'Actuarial Consulting & Pricing',
+        subtitle_es: 'Contratos Contingentes & Reservas',
+        subtitle_en: 'Contingent Contracts & Reserves',
         desc_es:
-            'Modelos actuariales y estadísticos para reportes, proyecciones financieras y asesoramiento en estrategias de inversión, ahorro y análisis de portafolios.',
-        desc_en: 'Actuarial and statistical modeling for executive reporting, financial projections, investment strategies, and portfolio analytics.',
-        tags: ['Modelos Estadísticos', 'Capital', 'Proyecciones'],
-        benefit_es: 'Optimización de la solvencia y mitigación de pérdidas no planificadas.',
-        benefit_en: 'Solvency optimization and mitigation of unplanned capital losses.'
+            'Diseño y valuación económico-financiera de carteras, contratos contingentes, estimación de reservas de siniestros (IBNR) y tarificación técnica sustentable.',
+        desc_en: 'Design and financial valuation of portfolios, contingent contracts, loss reserving (IBNR), and sustainable technical pricing.',
+        tags: ['Pricing / Tarificación', 'Reservas IBNR', 'Seguros'],
+        benefit_es: 'Protección de solvencia técnica y márgenes operativos sostenibles.',
+        benefit_en: 'Protection of technical solvency and sustainable operating margins.'
     },
     {
-        icon: '📊',
+        icon: '💼',
         title_es: 'Business Intelligence & Tableros de Control',
         title_en: 'Business Intelligence & Dashboards',
         subtitle_es: 'Monitoreo Ejecutivo en Tiempo Real',
         subtitle_en: 'Real-Time Executive Monitoring',
-        desc_es: 'Diseño de paneles de control interactivos y reportes ejecutivos automatizados para el monitoreo en tiempo real de indicadores clave.',
-        desc_en: 'Design of interactive dashboards and automated executive reporting for real-time monitoring of key performance indicators.',
-        tags: ['Indicadores Clave', 'Reportes Ejecutivos', 'BI'],
-        benefit_es: 'Toma de decisiones estratégicas basada en análisis cuantitativo riguroso.',
-        benefit_en: 'Strategic decision-making powered by rigorous quantitative analysis.'
+        desc_es:
+            'Diseño de paneles interactivos de control gerencial automatizados para el seguimiento en tiempo real de indicadores de volumen, cobranzas y siniestralidad.',
+        desc_en: 'Design of automated executive dashboards for real-time monitoring of volume, collections, and loss ratio indicators.',
+        tags: ['KPIs / Métricas', 'Dashboards', 'BI Ejecutivo'],
+        benefit_es: 'Visibilidad total del negocio para toma de decisiones rápida e informada.',
+        benefit_en: 'Total business visibility for fast, data-backed strategic decisions.'
     },
     {
         icon: '⚙️',
@@ -47,32 +78,38 @@ const services = [
         subtitle_es: 'Pipelines & Bases Relacionales',
         subtitle_en: 'Pipelines & Relational Databases',
         desc_es:
-            'Conversión de procesos manuales y planillas frágiles en sistemas automatizados, auditables y estructurados sobre bases de datos relacionales.',
-        desc_en: 'Conversion of manual, spreadsheet-heavy workflows into automated, fully auditable systems built on relational databases.',
-        tags: ['ETL / Pipelines', 'Bases de Datos', 'Optimización'],
-        benefit_es: 'Eficiencia operativa, eliminación de errores humanos y escalabilidad.',
-        benefit_en: 'Operational efficiency, elimination of human errors, and scalable workflows.'
+            'Migración y ordenamiento de planillas de cálculo dispersas a sistemas estructurados sobre bases de datos relacionales, reduciendo tiempos manuales.',
+        desc_en: 'Migration and restructuring of fragmented spreadsheets into auditable relational database workflows, drastically cutting manual overhead.',
+        tags: ['ETL / Automatización', 'Bases de Datos', 'Eficiencia'],
+        benefit_es: 'Eliminación de errores operativos y escalabilidad de los flujos de trabajo.',
+        benefit_en: 'Elimination of manual errors and seamless scalability of workflows.'
     }
 ];
 
 const benefits = [
     {
-        title_es: 'Gestión Financiera & de Riesgos',
-        title_en: 'Financial & Risk Management',
-        desc_es: 'Optimización continua respaldada en evidencia matemática.',
-        desc_en: 'Continuous optimization backed by mathematical rigor.'
+        title_es: 'Modelos Financieros Dinámicos',
+        title_en: 'Dynamic Financial Models',
+        desc_es: 'Simulaciones precisas adaptadas a la realidad de tu PyME.',
+        desc_en: 'Accurate simulations tailored to your SME reality.'
     },
     {
-        title_es: 'Decisiones Basadas en Datos',
-        title_en: 'Data-Driven Decisions',
-        desc_es: 'Reducción de la incertidumbre en operaciones complejas.',
-        desc_en: 'Uncertainty reduction across high-stakes business operations.'
+        title_es: 'Mitigación de Riesgos',
+        title_en: 'Risk Mitigation',
+        desc_es: 'Respaldo cuantitativo para decisiones de inversión y crédito.',
+        desc_en: 'Quantitative backing for investment and credit decisions.'
     },
     {
-        title_es: 'Eficiencia Operativa',
-        title_en: 'Operational Efficiency',
-        desc_es: 'Automatización de procesos repetitivos y reportes masivos.',
-        desc_en: 'Automation of repetitive manual workflows and mass reporting.'
+        title_es: 'Eficiencia de Procesos',
+        title_en: 'Process Efficiency',
+        desc_es: 'Optimización de aforo, turnos y automatización de reportes.',
+        desc_en: 'Throughput optimization, scheduling, and automated reporting.'
+    },
+    {
+        title_es: 'Capacitaciones',
+        title_en: 'Training & Workshops',
+        desc_es: 'Capacitaciones personalizadas para tu equipo en análisis de datos, pensamiento crítico de negocio y administración financiera.',
+        desc_en: 'Customized training for your team in data analysis, critical business thinking, and financial management.'
     }
 ];
 ---
@@ -80,13 +117,16 @@ const benefits = [
 <section id="servicios" class="services-section">
     <div class="container">
         <div class="section-header">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent mb-2">
+                <T es="Servicios personalizados" en="Tailored Services" />
+            </span>
             <h2>
-                <T es="Servicios & Consultoría" en="Services & Consulting" />
+                <T es="Servicios para PyMEs" en="Services for SMEs" />
             </h2>
             <p>
                 <T
-                    es="Soluciones cuantitativas, actuariales y tecnológicas diseñadas para transformar datos complejos en decisiones estratégicas y procesos eficientes."
-                    en="Quantitative, actuarial, and technology solutions designed to transform complex data into strategic decisions and automated workflows."
+                    es="Soluciones cuantitativas y simuladores a medida para evaluar viabilidad financiera, optimizar aforo operativo y presentar proyectos sólidos a inversores."
+                    en="Quantitative solutions and bespoke simulators to assess financial viability, optimize operational capacity, and present solid cases to investors."
                 />
             </p>
         </div>
@@ -112,7 +152,7 @@ const benefits = [
         <div class="services-grid">
             {
                 services.map((service) => (
-                    <div class="service-card">
+                    <div class="service-card tarjeta-hover">
                         <div class="card-header">
                             <span class="service-icon">{service.icon}</span>
                             <div class="tags">
@@ -147,7 +187,7 @@ const benefits = [
 
 <style>
     .services-section {
-        padding: 4rem 1.5rem;
+        padding: 3rem 0;
     }
     .container {
         max-width: 1100px;
@@ -164,7 +204,7 @@ const benefits = [
     }
     .section-header p {
         opacity: 0.85;
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         max-width: 700px;
         margin: 0 auto;
         line-height: 1.6;
@@ -173,20 +213,20 @@ const benefits = [
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
         gap: 1rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 1.25rem;
-        margin-bottom: 3rem;
+        background: var(--bg-muted, rgba(255, 255, 255, 0.04));
+        border: 1px solid var(--border-main, rgba(255, 255, 255, 0.08));
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2.5rem;
     }
     .benefit-item {
         display: flex;
         align-items: flex-start;
         gap: 0.75rem;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
     }
     .check-icon {
-        color: #3b82f6;
+        color: var(--accent-color, #2563eb);
         font-weight: bold;
     }
     .services-grid {
@@ -195,18 +235,21 @@ const benefits = [
         gap: 1.75rem;
     }
     .service-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 2rem 1.5rem;
+        background: var(--bg-muted, rgba(255, 255, 255, 0.02));
+        border: 1px solid var(--border-main, rgba(255, 255, 255, 0.08));
+        border-radius: 18px;
+        padding: 2rem 1.75rem;
         display: flex;
         flex-direction: column;
-        transition: all 0.3s ease;
+        transition:
+            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            box-shadow 0.35s ease,
+            border-color 0.3s ease;
     }
     .service-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(59, 130, 246, 0.4);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px);
+        border-color: var(--accent-color, #3b82f6);
+        box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.15);
     }
     .card-header {
         display: flex;
@@ -221,36 +264,40 @@ const benefits = [
         display: flex;
         flex-wrap: wrap;
         gap: 0.4rem;
+        justify-content: flex-end;
     }
     .tag {
-        font-size: 0.75rem;
-        background: rgba(255, 255, 255, 0.06);
-        padding: 0.2rem 0.6rem;
-        border-radius: 20px;
-        opacity: 0.8;
+        font-size: 0.72rem;
+        background: rgba(125, 125, 125, 0.1);
+        padding: 0.25rem 0.6rem;
+        border-radius: 9999px;
+        font-weight: 500;
+        opacity: 0.85;
     }
     .service-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         font-weight: 600;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.3;
     }
     .subtitle {
         font-size: 0.85rem;
-        opacity: 0.5;
+        opacity: 0.6;
         margin-bottom: 1rem;
         display: block;
+        font-weight: 500;
     }
     .description {
         font-size: 0.95rem;
-        line-height: 1.55;
+        line-height: 1.6;
         opacity: 0.85;
         margin-bottom: 1.5rem;
         flex-grow: 1;
     }
     .card-footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid var(--border-main, rgba(255, 255, 255, 0.08));
         padding-top: 1rem;
         font-size: 0.85rem;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 </style>
