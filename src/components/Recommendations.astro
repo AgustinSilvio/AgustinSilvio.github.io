@@ -36,149 +36,85 @@ const recommendations = [
 ];
 ---
 
-<section id="recomendaciones" class="recommendations-section">
+<section id="recomendaciones" class="recommendations-section scroll-reveal">
     <div class="container">
-        <details class="recommendations-disclosure">
-            <summary class="section-header">
-                <span class="summary-copy">
-                    <span class="summary-title">
-                        <T es="Recomendaciones & Endosos" en="Recommendations & Endorsements" />
-                    </span>
-                    <span class="summary-description">
-                        <T es="Testimonios de directivos, gerentes y colegas técnicos." en="Endorsements from executives, managers, and technical peers." />
-                    </span>
-                    <span class="summary-meta">
-                        <T
-                            es={`${recommendations.length} testimonios · Ver recomendaciones`}
-                            en={`${recommendations.length} endorsements · View recommendations`}
-                        />
-                    </span>
-                </span>
-                <span class="summary-icon" aria-hidden="true">+</span>
-            </summary>
+        <div class="section-header">
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent mb-1">
+                <T es="Respaldo Profesional" en="Professional Endorsement" />
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+                <T es="Recomendaciones & Endosos" en="Recommendations & Endorsements" />
+            </h2>
+            <p class="text-sm sm:text-base opacity-80 mt-1">
+                <T es="Testimonios verificados en LinkedIn de directivos, gerentes y colegas del sector corporativo." en="Verified LinkedIn endorsements from executives, managers, and corporate peers." />
+            </p>
+        </div>
 
-            <div class="recommendations-grid">
-                {
-                    recommendations.map((item) => (
-                        <div class="testimonial-card">
-                            <div class="card-top">
-                                <span class="quote-icon">“</span>
-                                <span class="linkedin-badge">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.871h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                    </svg>
-                                    <T es="Verificado" en="Verified" />
+        <div class="recommendations-grid">
+            {
+                recommendations.map((item) => (
+                    <div class="testimonial-card tarjeta-hover">
+                        <div class="card-top">
+                            <span class="quote-icon">“</span>
+                            <span class="linkedin-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.871h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg>
+                                <T es="Verificado" en="Verified" />
+                            </span>
+                        </div>
+
+                        <p class="full-text">
+                            <T es={item.text_es} en={item.text_en} />
+                        </p>
+
+                        <div class="author-info">
+                            <img src={item.image} alt={item.name} class="author-img" loading="lazy" />
+                            <div class="author-details">
+                                <strong>{item.name}</strong>
+                                <span class="role">
+                                    <T es={item.role_es} en={item.role_en} />
                                 </span>
                             </div>
-
-                            <p class="full-text">
-                                <T es={item.text_es} en={item.text_en} />
-                            </p>
-
-                            <div class="author-info">
-                                <img src={item.image} alt={item.name} class="author-img" />
-                                <div class="author-details">
-                                    <strong>{item.name}</strong>
-                                    <span class="role">
-                                        <T es={item.role_es} en={item.role_en} />
-                                    </span>
-                                </div>
-                            </div>
                         </div>
-                    ))
-                }
-            </div>
-        </details>
+                    </div>
+                ))
+            }
+        </div>
     </div>
 </section>
 
 <style>
     .recommendations-section {
-        padding: 2rem 1.5rem 4rem;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border-color-main, rgba(255, 255, 255, 0.08));
     }
     .container {
         max-width: 1100px;
         margin: 0 auto;
     }
-    .recommendations-disclosure {
-        border-top: 1px solid color-mix(in srgb, var(--border-color) 70%, transparent);
-        border-bottom: 1px solid color-mix(in srgb, var(--border-color) 70%, transparent);
-    }
     .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        cursor: pointer;
-        list-style: none;
-        min-height: 5.5rem;
-        padding: 1rem 0;
-    }
-    .section-header::-webkit-details-marker {
-        display: none;
-    }
-    .summary-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-    .summary-title {
-        font-family: 'Newsreader Variable', serif;
-        font-size: clamp(1.5rem, 4vw, 2.25rem);
-        font-weight: 700;
-    }
-    .summary-description {
-        max-width: 42rem;
-        font-size: 0.95rem;
-        opacity: 0.75;
-    }
-    .summary-meta {
-        color: var(--accent-color);
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-    .summary-icon {
-        display: grid;
-        flex: 0 0 2.75rem;
-        width: 2.75rem;
-        height: 2.75rem;
-        place-items: center;
-        border: 1px solid var(--border-color);
-        border-radius: 999px;
-        color: var(--accent-color);
-        font-size: 1.5rem;
-        font-weight: 400;
-        transition:
-            transform 0.25s ease,
-            background-color 0.25s ease;
-    }
-    .recommendations-disclosure[open] .summary-icon {
-        transform: rotate(45deg);
-        background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
-    }
-    .recommendations-grid {
-        padding: 1rem 0 2rem;
+        margin-bottom: 2rem;
     }
     .recommendations-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-        gap: 1.75rem;
+        gap: 1.5rem;
     }
     .testimonial-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 2rem 1.5rem;
+        background: var(--bg-muted, rgba(255, 255, 255, 0.03));
+        border: 1px solid var(--border-main, rgba(255, 255, 255, 0.08));
+        border-radius: 18px;
+        padding: 1.75rem 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition:
-            transform 0.3s ease,
-            border-color 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
     .testimonial-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-6px);
+        border-color: var(--accent-color, #3b82f6);
+        box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.12);
     }
     .card-top {
         display: flex;
@@ -187,53 +123,57 @@ const recommendations = [
         margin-bottom: 1rem;
     }
     .quote-icon {
+        font-family: serif;
         font-size: 2.5rem;
         line-height: 1;
-        opacity: 0.3;
-        font-family: Georgia, serif;
+        opacity: 0.35;
+        color: var(--accent-color, #2563eb);
     }
     .linkedin-badge {
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 9999px;
+        background: rgba(10, 102, 194, 0.12);
         color: #0a66c2;
-        background: rgba(10, 102, 194, 0.1);
-        padding: 0.25rem 0.6rem;
-        border-radius: 20px;
         font-weight: 600;
     }
     .full-text {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         line-height: 1.6;
-        opacity: 0.75;
-        margin-bottom: 1.75rem;
+        opacity: 0.88;
+        margin-bottom: 1.5rem;
         flex-grow: 1;
     }
     .author-info {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        padding-top: 1.25rem;
+        gap: 0.85rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-main, rgba(255, 255, 255, 0.06));
     }
     .author-img {
-        width: 52px;
-        height: 52px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid rgba(255, 255, 255, 0.15);
+        border: 2px solid var(--accent-color, #2563eb);
     }
     .author-details {
         display: flex;
         flex-direction: column;
+        font-size: 0.85rem;
     }
     .author-details strong {
         font-size: 0.95rem;
         font-weight: 600;
     }
     .role {
-        font-size: 0.8rem;
-        opacity: 0.8;
+        font-size: 0.78rem;
+        opacity: 0.65;
+        line-height: 1.3;
+        margin-top: 0.1rem;
     }
 </style>

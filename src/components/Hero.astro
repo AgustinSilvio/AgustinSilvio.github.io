@@ -9,36 +9,49 @@ const socialLinks = siteConfig.socialLinks || [];
 
 <section class="w-full mb-16 sm:mb-24">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
-        <!-- Columna Izquierda: Presentación y Propuesta de Valor -->
+        <!-- Columna Izquierda: Presentación y Solución de Negocio -->
         <div class="md:col-span-7 flex flex-col gap-5 order-2 md:order-1">
-            <div
-                class="inline-flex items-center gap-2 self-start rounded-full border border-theme-border/40 bg-theme-bg-muted/50 px-3 py-1 text-xs font-medium text-main"
-            >
-                <span class="inline-block w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                <T es="Consultoría Cuantitativa & Finanzas PyME" en="Quantitative Consulting & SME Finance" />
+            <div class="inline-flex items-center gap-2 self-start rounded-full border border-theme-border/40 bg-theme-bg-muted/60 px-3.5 py-1 text-xs font-semibold text-main">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <T es="Consultoría Cuantitativa & Viabilidad Financiera" en="Quantitative Consulting & Financial Viability" />
             </div>
 
-            <h1 class="text-3xl font-serif font-medium sm:text-5xl leading-tight">
-                <T es="" en="" />
-            </h1>
+            <div class="space-y-1">
+                <h1 class="text-3xl font-serif font-medium sm:text-5xl leading-tight text-balance">
+                    Agustín Silvio Andrés Rojas
+                </h1>
+                <p class="text-lg sm:text-xl font-serif italic text-accent font-medium">
+                    <T es="Actuario en Economía" en="Actuary in Economics" />
+                </p>
+            </div>
 
-            <p class="text-lg leading-relaxed opacity-90 text-pretty">
+            <p class="text-base sm:text-lg leading-relaxed opacity-90 text-pretty">
                 <T
-                    es="Actuario especializado en modelado cuantitativo de riesgos, tarificación y simuladores de negocios para PyMEs, clínicas y complejos deportivos. Transformo datos e incertidumbre en decisiones estratégicas y viabilidad financiera."
-                    en="Actuary specialized in quantitative risk modeling, pricing, and business viability simulators for SMEs, clinics, and sports complexes. Turning data and uncertainty into strategic decisions and financial viability."
+                    es="Ayudo a PyMEs, clínicas, centros de salud y complejos deportivos a predecir su viabilidad económica, modelar su aforo y flujos de fondos, y mitigar riesgos antes de comprometer capital. Diseño simuladores visuales e interactivos que transforman la incertidumbre en decisiones de inversión claras y sustentables."
+                    en="I help SMEs, clinics, healthcare centers, and sports facilities forecast economic viability, model capacity and cash flows, and mitigate operational risks before committing capital. Designing interactive, visual simulators that turn uncertainty into clear, sustainable investment decisions."
                 />
             </p>
 
-            <div class="flex flex-wrap gap-3 mt-1">
-                <Button href="/contact">
-                    <T es="Agendar reunión / Contacto →" en="Schedule meeting / Contact →" />
-                </Button>
-                <Button href="/about" class="opacity-80 hover:opacity-100">
-                    <T es="Sobre mí" en="About me" />
+            <!-- Botones de Acción -->
+            <div class="flex flex-wrap gap-3 pt-1">
+                <a
+                    href="https://wa.me/5491162528902?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20gratuita"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex min-h-11 items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm shadow-md shadow-emerald-600/20 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.796.88h.005c3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.773-5.767zm3.39 8.163c-.144.405-.837.774-1.17.822-.311.045-.694.053-1.802-.405-1.428-.588-2.355-2.035-2.426-2.129-.071-.094-.588-.781-.588-1.488 0-.708.371-1.057.502-1.202.131-.144.286-.181.382-.181.096 0 .191.002.274.007.087.006.204-.033.318.242.119.286.405.988.441 1.06.036.072.06.156.012.251-.048.096-.072.155-.143.238-.072.083-.151.186-.216.25-.072.072-.147.151-.063.295.084.144.373.615.8 1 .552.497 1.018.651 1.162.723.144.072.228.06.313-.036.084-.096.36-.419.456-.563.096-.144.192-.12.324-.072.132.048.837.395.981.467.144.072.24.108.276.168.036.06.036.348-.108.753zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.436 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                    </svg>
+                    <span><T es="Agendar reunión / WhatsApp →" en="Schedule meeting / WhatsApp →" /></span>
+                </a>
+                <Button href="/about" class="opacity-90 hover:opacity-100">
+                    <T es="Sobre mí & Trayectoria" en="About Me & Bio" />
                 </Button>
             </div>
 
-            <nav aria-label="Redes sociales" class="flex flex-wrap gap-x-5 gap-y-2 text-sm pt-2">
+            <!-- Redes Sociales -->
+            <nav aria-label="Redes sociales" class="flex flex-wrap gap-x-5 gap-y-2 text-sm pt-1">
                 {
                     socialLinks.map((link) => (
                         <a
@@ -54,23 +67,86 @@ const socialLinks = siteConfig.socialLinks || [];
             </nav>
         </div>
 
-        <!-- Columna Derecha: Foto con Efecto Antigravity -->
-        <div class="md:col-span-5 flex justify-center order-1 md:order-2">
-            <div class="antigravity relative max-w-[260px] sm:max-w-[300px] w-full">
-                <div
-                    class="relative overflow-hidden rounded-3xl border border-theme-border/30 bg-gradient-to-b from-theme-bg-muted/40 to-theme-bg-muted/10 shadow-2xl p-2 backdrop-blur-sm"
-                >
+        <!-- Columna Derecha: Tarjeta Fotográfica Interactiva -->
+        <div class="md:col-span-5 flex flex-col items-center order-1 md:order-2">
+            <div class="antigravity relative max-w-[280px] sm:max-w-[320px] w-full">
+                <!-- Marco de la Foto -->
+                <div class="relative overflow-hidden rounded-3xl border border-theme-border/40 bg-gradient-to-b from-theme-bg-muted/70 via-theme-bg-muted/30 to-theme-bg-muted/10 shadow-2xl p-2.5 backdrop-blur-md">
+                    <!-- Foto de Setup de Trabajo (Por Defecto) -->
                     <img
-                        src="/selfie-cuadro-fondo.jpg"
-                        alt=""
-                        class="w-full h-auto rounded-2xl object-cover shadow-inner transition-transform duration-500 hover:scale-[1.02]"
+                        id="hero-img-trabajo"
+                        src="/foto-trabajando.jpg"
+                        alt="Agustín Silvio Andrés Rojas - Actuario en Economía en su entorno de trabajo con simuladores y tableros"
+                        class="w-full h-auto aspect-[3/4] rounded-2xl object-cover object-top shadow-inner transition-opacity duration-300"
                         loading="eager"
                         decoding="async"
                     />
+                    <!-- Foto Institucional (Traje y Pin FCE) -->
+                    <img
+                        id="hero-img-institucional"
+                        src="/foto-institucional.jpg"
+                        alt="Agustín Silvio Andrés Rojas - Actuario en Economía graduado"
+                        class="w-full h-auto aspect-[3/4] rounded-2xl object-cover object-top shadow-inner transition-opacity duration-300 hidden"
+                        loading="lazy"
+                        decoding="async"
+                    />
+
+                    <!-- Badge de Título y Especialidad sobre la foto -->
+                    <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-black/75 backdrop-blur-md border border-white/15 px-3 py-2 text-white shadow-lg text-center">
+                        <p class="text-xs font-semibold tracking-wide flex items-center justify-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Actuario en Economía</span>
+                        </p>
+                        <p class="text-[11px] text-slate-300 opacity-90">Modelos de Negocio & Riesgo</p>
+                    </div>
                 </div>
+
+                <!-- Botones Switch de Foto (En Acción / Institucional) -->
+                <div class="mt-3 flex justify-center gap-1.5 p-1 bg-theme-bg-muted/60 border border-theme-border/30 rounded-full max-w-fit mx-auto text-xs font-medium">
+                    <button
+                        id="btn-ver-trabajo"
+                        type="button"
+                        class="px-3 py-1 rounded-full bg-theme-bg text-main font-semibold shadow-sm transition-all cursor-pointer"
+                        title="Ver foto en entorno de trabajo"
+                    >
+                        💻 En Acción
+                    </button>
+                    <button
+                        id="btn-ver-institucional"
+                        type="button"
+                        class="px-3 py-1 rounded-full text-main opacity-70 hover:opacity-100 transition-all cursor-pointer"
+                        title="Ver foto formal institucional"
+                    >
+                        👔 Institucional
+                    </button>
+                </div>
+
                 <!-- Sombra difusa debajo del objeto flotante -->
-                <div class="mx-auto mt-4 h-3 w-3/4 rounded-full bg-main/10 blur-md"></div>
+                <div class="mx-auto mt-2 h-3 w-3/4 rounded-full bg-main/10 blur-md"></div>
             </div>
         </div>
     </div>
 </section>
+
+<script is:inline>
+    const btnTrabajo = document.getElementById('btn-ver-trabajo');
+    const btnInst = document.getElementById('btn-ver-institucional');
+    const imgTrabajo = document.getElementById('hero-img-trabajo');
+    const imgInst = document.getElementById('hero-img-institucional');
+
+    if (btnTrabajo && btnInst && imgTrabajo && imgInst) {
+        btnTrabajo.addEventListener('click', () => {
+            imgTrabajo.classList.remove('hidden');
+            imgInst.classList.add('hidden');
+            btnTrabajo.className = 'px-3 py-1 rounded-full bg-theme-bg text-main font-semibold shadow-sm transition-all cursor-pointer';
+            btnInst.className = 'px-3 py-1 rounded-full text-main opacity-70 hover:opacity-100 transition-all cursor-pointer';
+        });
+
+        btnInst.addEventListener('click', () => {
+            imgInst.classList.remove('hidden');
+            imgTrabajo.classList.add('hidden');
+            btnInst.className = 'px-3 py-1 rounded-full bg-theme-bg text-main font-semibold shadow-sm transition-all cursor-pointer';
+            btnTrabajo.className = 'px-3 py-1 rounded-full text-main opacity-70 hover:opacity-100 transition-all cursor-pointer';
+        });
+    }
+</script>

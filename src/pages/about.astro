@@ -4,90 +4,113 @@ import T from '../components/T.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About Me | Agustín Rojas" description="Consultoría actuarial, gestión de riesgos y análisis cuantitativo de datos.">
+<BaseLayout title="Sobre mí | Agustín Rojas - Actuario en Economía" description="Actuario en Economía. Consultoría cuantitativa, viabilidad de negocios, tarificación y simuladores de gestión.">
     <article class="prose max-w-none py-8">
-        <div class="mb-8 overflow-hidden rounded-xl border border-[var(--border-color-main)]">
-            <img src="/aventura.jpeg" alt="Agustín Rojas - Trekking & Outdoor" class="w-full h-80 object-cover m-0" />
+        <!-- Dúo de Fotos Profesionales Superiores -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8 not-prose max-w-2xl mx-auto">
+            <div class="overflow-hidden rounded-2xl border border-[var(--border-color-main)]/30 shadow-sm aspect-[4/5] bg-theme-bg-muted/40">
+                <img src="/foto-trabajando.jpg" alt="Agustín Rojas - Entorno de trabajo y simuladores" class="w-full h-full object-cover object-top hover:scale-102 transition-transform duration-300" />
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-[var(--border-color-main)]/30 shadow-sm aspect-[4/5] bg-theme-bg-muted/40">
+                <img src="/foto-institucional.jpg" alt="Agustín Rojas - Actuario en Economía graduado" class="w-full h-full object-cover object-top hover:scale-102 transition-transform duration-300" />
+            </div>
         </div>
 
         <h1 class="text-3xl font-serif font-bold mb-2">
             <T es="Sobre mí" en="About Me" />
         </h1>
 
-        <h2 class="text-xl font-medium opacity-90 mt-0 mb-6">
-            <T es=" Consultoría Actuarial & Análisis Cuantitativo" en=" Actuarial Consulting & Quantitative Analytics" />
+        <h2 class="text-xl font-medium opacity-90 mt-0 mb-6 text-accent">
+            <T es="Actuario en Economía — Consultoría Cuantitativa & Viabilidad de Negocios" en="Actuary in Economics — Quantitative Consulting & Business Viability" />
         </h2>
 
         <p class="leading-relaxed">
             <T
-                es="¡Hola! Soy graduado de Actuario en economía con base en la Ciudad Autónoma de Buenos Aires y Salta. Mi trabajo se enfoca en conectar la rigurosidad matemática y estadística con la toma de decisiones estratégicas, la gestión de riesgos y la arquitectura de datos relacionales."
-                en="Greetings! I'm a graduate of Actuarial Science in Economics based in Buenos Aires and Salta. My work focuses on bridging mathematical rigor and statistical modeling with strategic decision-making, risk management, and scalable relational data architecture."
+                es="¡Hola! Soy Agustín Silvio Andrés Rojas, graduado de Actuario en Economía con base en la Ciudad Autónoma de Buenos Aires y el NOA (Noroeste Argentino). Mi enfoque profesional une la rigurosidad matemática y estadística con la resolución práctica de problemas de negocio: predicción de viabilidad económica, modelado de aforo, tarificación y mitigación de riesgo para comités de inversión y directivos."
+                en="Hello! I'm Agustín Silvio Andrés Rojas, a graduate in Actuarial Science in Economics based in Buenos Aires and the Argentine Northwest (NOA). My professional focus bridges mathematical and statistical rigor with practical business problem-solving: economic viability forecasting, capacity modeling, pricing, and risk mitigation for investment committees and executives."
             />
         </p>
 
         <h3 class="text-lg font-semibold mt-8 mb-3">
-            <T es="Especialización & Propuesta de Valor" en="Expertise & Value Proposition" />
+            <T es="Especialización & Soluciones de Alto Impacto" en="Specialization & High-Impact Solutions" />
         </h3>
 
         <ul class="space-y-2">
             <li>
-                <strong><T es="Modelado Actuarial & Tarificación:" en="Actuarial Modeling & Pricing:" /></strong>
+                <strong><T es="Simuladores de Viabilidad & Cash Flow:" en="Viability Simulators & Cash Flow:" /></strong>
                 <T
-                    es=" Evaluación financiera de contratos contingentes, estimación de reservas y cálculo de primas bajo marcos estadísticos rigurosos."
-                    en=" Valuation of contingent contracts, loss reserving, and rate-making using sound statistical methods."
+                    es=" Evaluación económico-financiera y proyección de flujos mensuales para PyMEs, clínicas, centros de salud y complejos deportivos antes de comprometer capital."
+                    en=" Economic and financial evaluation and monthly cash flow forecasting for SMEs, clinics, healthcare centers, and sports complexes prior to committing capital."
                 />
             </li>
             <li>
-                <strong><T es="Estrategia Financiera & Riesgos:" en="Financial Risk Strategy:" /></strong>
+                <strong><T es="Modelado de Capacidad & Aforo:" en="Capacity & Throughput Modeling:" /></strong>
                 <T
-                    es=" Análisis de solvencia, mitigación de pérdidas imprevistas y proyecciones dinámicas de escenarios."
-                    en=" Solvency assessment, capital loss mitigation, and dynamic scenario forecasting."
+                    es=" Teoría de colas y optimización de espacios para eliminar cuellos de botella y esperas en guardias, consultorios y canchas."
+                    en=" Queuing theory and space optimization to eliminate operational bottlenecks and customer wait times in clinics and facilities."
                 />
             </li>
             <li>
-                <strong><T es="Arquitectura de Datos & Automatización:" en="Data Architecture & Automation:" /></strong>
+                <strong><T es="Tarificación (Pricing) & Modelado Actuarial:" en="Pricing & Actuarial Modeling:" /></strong>
                 <T
-                    es=" Diseño de pipelines automatizados (ETL) sobre bases de datos relacionales y migración de planillas manuales a procesos auditables."
-                    en=" Automated data pipelines (ETL) across relational databases and migration of spreadsheet workflows into auditable systems."
+                    es=" Valuación técnica de contratos contingentes, estimación de reservas de siniestros y diseño de tarifas equilibradas y sustentables."
+                    en=" Technical valuation of contingent contracts, loss reserve estimation, and sustainable rate-making."
                 />
             </li>
             <li>
-                <strong><T es="Business Intelligence:" en="Business Intelligence:" /></strong>
+                <strong><T es="Tableros de Control & Monitoreo en Tiempo Real:" en="Executive Dashboards & Monitoring:" /></strong>
                 <T
-                    es=" Construcción de tableros ejecutivos interactivos para el monitoreo en tiempo real de indicadores clave de negocio."
-                    en=" Developing interactive executive dashboards for real-time tracking of core business indicators."
+                    es=" Construcción de tableros ejecutivos interactivos para el seguimiento continuo de indicadores clave (aforo, facturación, cobranzas)."
+                    en=" Developing interactive executive dashboards for real-time tracking of core business indicators (capacity, revenue, collections)."
                 />
             </li>
         </ul>
 
         <h3 class="text-lg font-semibold mt-8 mb-3">
-            <T es="Metodología & Resolución de Problemas" en="Methodology & Problem Solving" />
+            <T es="Filosofía & Método de Trabajo" en="Philosophy & Methodology" />
         </h3>
 
         <p class="leading-relaxed">
             <T
-                es="Abordo cada proyecto con curiosidad analítica y mentalidad de ingeniería. Mi objetivo es transformar la incertidumbre y los grandes volúmenes de información en procesos predecibles, escalables y orientados a generar rentabilidad y solvencia."
-                en="I approach every challenge with analytical rigor and an engineering mindset. My goal is to reduce operational uncertainty and turn complex data into clear, scalable, and business-driven strategies."
+                es="Abordo cada desafío con mentalidad analítica y foco en resultados tangibles. Mi objetivo es que cada número, modelo o simulador responda a una pregunta estratégica concreta: ¿cuál es el riesgo real?, ¿dónde está el punto de equilibrio?, y ¿cómo maximizar la rentabilidad operativa de forma sustentable?"
+                en="I approach every challenge with analytical rigor and an outcome-driven mindset. My goal is to ensure every quantitative model answers a concrete strategic question: what is the real risk, where is the breakeven point, and how to maximize sustainable operating profitability?"
             />
         </p>
+
+        <!-- Foto de Montaña & Disciplina (Antes de Contacto Directo) -->
+        <div class="my-10 overflow-hidden rounded-2xl border border-[var(--border-color-main)]/30 shadow-md not-prose">
+            <img src="/aventura.jpeg" alt="Agustín Rojas - Alta montaña y trekking" class="w-full h-72 sm:h-96 object-cover object-center" />
+            <div class="p-3 bg-theme-bg-muted/50 border-t border-[var(--border-color-main)]/20 text-xs text-muted text-center font-serif italic">
+                <T es="Expedición en alta montaña · Planificación rigurosa, resiliencia y adaptabilidad ante la incertidumbre como metodología de vida y de trabajo." en="High-mountain expedition · Rigorous planning, resilience, and adaptability in the face of uncertainty as a personal and professional mindset." />
+            </div>
+        </div>
 
         <h3 class="text-lg font-semibold mt-8 mb-3">
-            <T es="Contacto & Colaboración" en="Get in Touch" />
+            <T es="Contacto Directo" en="Get in Touch" />
         </h3>
 
         <p class="leading-relaxed">
             <T
-                es="Ya sea que busques estructurar modelos de tarificación, automatizar flujos masivos de datos o diseñar tableros de control analíticos, estaré encantado de colaborar."
-                en="Whether you are looking to optimize pricing models, automate data pipelines, or develop custom analytical dashboards, I'd be glad to collaborate."
+                es="Ya sea para evaluar un nuevo proyecto, simular la viabilidad de una inversión o estructurar un modelo de tarifas, estaré encantado de conversar."
+                en="Whether to evaluate a new venture, simulate investment viability, or structure a pricing model, I would be glad to connect."
             />
         </p>
 
-        <p class="italic font-serif text-lg mt-6">
-            <T es="¡Construyamos soluciones sólidas y basadas en datos!" en="Let's build something impactful together!" />
-        </p>
-
-        <div class="flex justify-center mt-10">
-            <img src="https://raw.githubusercontent.com/bornmay/bornmay/Update/svg/Bottom.svg" alt="Stats" class="max-w-full" />
+        <div class="mt-6 flex flex-wrap gap-4 not-prose">
+            <a
+                href="https://wa.me/5491162528902?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20gratuita"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm shadow-md transition-all"
+            >
+                <span>💬 WhatsApp Directo</span>
+            </a>
+            <a
+                href="mailto:agustinsilviorojas@outlook.com.ar"
+                class="inline-flex min-h-11 items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-[var(--border-color-main)] bg-main/5 text-main font-medium text-sm hover:bg-main/10 transition-all"
+            >
+                <span>✉️ Enviar Correo</span>
+            </a>
         </div>
     </article>
 </BaseLayout>

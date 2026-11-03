@@ -8,6 +8,7 @@ import ProjectPreview from '../components/ProjectPreview.astro';
 import Recommendations from '../components/Recommendations.astro';
 import Services from '../components/Services.astro';
 import VideoSection from '../components/VideoSection.astro';
+import CredibilityStrip from '../components/CredibilityStrip.astro';
 import T from '../components/T.astro';
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -20,8 +21,9 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+<BaseLayout description={siteConfig.description} image={siteConfig.image} showHeader={false}>
     <Hero />
+    <CredibilityStrip />
     <VideoSection />
     <Services />
     <Recommendations />

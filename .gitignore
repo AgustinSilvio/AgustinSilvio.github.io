@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Archivos pesados originales de cámara sin optimizar
+public/foto trabajando.png

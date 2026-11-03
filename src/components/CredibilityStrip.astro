@@ -1,0 +1,53 @@
+---
+// src/components/CredibilityStrip.astro
+import T from './T.astro';
+
+const pillars = [
+    {
+        icon: '🎓',
+        title_es: 'Actuario en Economía',
+        title_en: 'Actuary in Economics',
+        desc_es: 'Graduado FCE · Rigor matemático y económico aplicado.',
+        desc_en: 'Economics & Actuarial Degree · Applied quantitative rigor.'
+    },
+    {
+        icon: '📊',
+        title_es: 'Simuladores de Viabilidad',
+        title_en: 'Viability Simulators',
+        desc_es: 'Evaluación económica y financiera antes de invertir.',
+        desc_en: 'Economic and financial evaluation before investment.'
+    },
+    {
+        icon: '⏱️',
+        title_es: 'Capacidad & Aforo',
+        title_en: 'Capacity & Throughput',
+        desc_es: 'Optimización de turnos, salas y eliminación de esperas.',
+        desc_en: 'Shift and space optimization, eliminating wait times.'
+    },
+    {
+        icon: '🛡️',
+        title_es: 'Mitigación de Riesgos',
+        title_en: 'Risk Mitigation',
+        desc_es: 'Análisis de estrés y respaldo para inversores.',
+        desc_en: 'Stress-testing and quantitative investor shielding.'
+    }
+];
+---
+
+<section class="w-full mb-16 sm:mb-20 scroll-reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl sm:rounded-3xl border border-theme-border/40 bg-theme-bg-muted/40 backdrop-blur-sm">
+        {
+            pillars.map((p) => (
+                <div class="flex flex-col gap-1 p-3 sm:p-4 rounded-xl bg-theme-bg/60 border border-theme-border/20 shadow-xs transition-transform hover:-translate-y-0.5">
+                    <span class="text-xl sm:text-2xl mb-1">{p.icon}</span>
+                    <h3 class="text-xs sm:text-sm font-semibold text-main leading-snug">
+                        <T es={p.title_es} en={p.title_en} />
+                    </h3>
+                    <p class="text-[11px] sm:text-xs opacity-75 leading-relaxed">
+                        <T es={p.desc_es} en={p.desc_en} />
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+</section>

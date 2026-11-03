@@ -5,17 +5,17 @@ import T from './T.astro';
 const services = [
     {
         icon: '📊',
-        title_es: 'Simuladores de Negocio & Viabilidad Financiera',
-        title_en: 'Business Simulators & Financial Viability',
-        subtitle_es: 'PyMEs, Clínicas, Centros Deportivos, Centros de Salud, etc.',
-        subtitle_en: 'SMEs, Clinics, Sports Complexes, Health Centers, etc.',
+        title_es: 'Simuladores de Viabilidad & Retorno de Inversión',
+        title_en: 'Viability Simulators & ROI Modeling',
+        subtitle_es: 'PyMEs, Clínicas & Complejos Deportivos',
+        subtitle_en: 'SMEs, Clinics & Sports Complexes',
         desc_es:
-            'Modelos dinámicos y simuladores cuantitativos de viabilidad económica, punto de equilibrio y proyección de flujos de caja (Cash Flow) para centros de salud, clínicas y complejos deportivos.',
+            'Modelos cuantitativos dinámicos de viabilidad económica, cálculo de punto de equilibrio y proyección de flujos de fondos mensuales. Permiten evaluar la rentabilidad real de un proyecto o ampliación antes de comprometer capital.',
         desc_en:
-            'Dynamic models and quantitative simulators of economic viability, breakeven points, and cash flow projections for health centers, clinics, and sports facilities.',
-        tags: ['Simuladores / Tools', 'Flujo de Fondos', 'Viabilidad PyME'],
-        benefit_es: 'Proyección precisa de rentabilidad y retorno de inversión antes de comprometer capital.',
-        benefit_en: 'Accurate projection of profitability and ROI before committing capital.'
+            'Dynamic quantitative models for economic viability, breakeven analysis, and monthly cash flow projections. Accurately assessing project profitability before committing capital.',
+        tags: ['Viabilidad Económica', 'Punto de Equilibrio', 'Flujo de Fondos'],
+        benefit_es: 'Certeza financiera y proyección de escenarios antes de invertir.',
+        benefit_en: 'Financial certainty and scenario forecasting prior to investment.'
     },
     {
         icon: '⏱️',
@@ -24,12 +24,12 @@ const services = [
         subtitle_es: 'Optimización de Turnos & Flujo Operativo',
         subtitle_en: 'Shift Optimization & Operational Flow',
         desc_es:
-            'Análisis de aforo, teoría de colas y optimización de uso de recursos en guardias, consultorios, canchas y salas de tratamiento. Eliminación de cuellos de botella.',
+            'Análisis de aforo, teoría de colas y optimización de uso de recursos en guardias, consultorios, canchas y salas de tratamiento. Eliminación de cuellos de botella y esperas prolongadas para los usuarios.',
         desc_en:
-            'Capacity analysis, queuing theory, and resource utilization optimization for emergency rooms, clinics, sports courts, and treatment rooms. Eliminating operational bottlenecks.',
-        tags: ['Capacidad / Aforo', 'Optimización', 'Operaciones'],
-        benefit_es: 'Máxima utilización de instalaciones sin saturación ni demoras para los clientes.',
-        benefit_en: 'Maximum facility utilization without overcrowding or customer wait times.'
+            'Capacity modeling, queuing theory, and resource allocation for emergency rooms, clinics, sports facilities, and treatment rooms. Eliminating operational bottlenecks and client wait times.',
+        tags: ['Aforo & Ocupación', 'Tiempos de Espera', 'Optimización'],
+        benefit_es: 'Máxima ocupación y rendimiento de instalaciones sin saturar la atención.',
+        benefit_en: 'Maximum facility utilization and efficiency without operational congestion.'
     },
     {
         icon: '🛡️',
@@ -38,12 +38,12 @@ const services = [
         subtitle_es: 'Mitigación de Riesgos para Inversores',
         subtitle_en: 'Risk Mitigation for Investors',
         desc_es:
-            'Pruebas de estrés ante escenarios adversos: caídas de demanda, variación de costos e inflación. Blindaje cuantitativo para comités de inversión y crédito.',
+            'Pruebas de estrés ante caídas de demanda, variación de costos e inflación. Blindaje cuantitativo para fundamentar presentaciones ante inversores, comités de crédito y socios comerciales.',
         desc_en:
-            'Stress testing under adverse scenarios: demand shocks, cost fluctuations, and inflation. Quantitative shielding for investment and credit committees.',
+            'Stress testing under demand shocks, cost volatility, and inflation. Quantitative shielding to strengthen presentations for investors, credit committees, and partners.',
         tags: ['Stress Testing', 'Mitigación de Riesgos', 'Inversores'],
-        benefit_es: 'Respaldo técnico riguroso que genera certidumbre en socios e inversores.',
-        benefit_en: 'Rigorous technical backing that generates certainty for partners and investors.'
+        benefit_es: 'Respaldo técnico riguroso que brinda solidez ante rondas de inversión.',
+        benefit_en: 'Rigorous technical backing that builds investor confidence.'
     },
     {
         icon: '📈',
@@ -52,37 +52,40 @@ const services = [
         subtitle_es: 'Contratos Contingentes & Reservas',
         subtitle_en: 'Contingent Contracts & Reserves',
         desc_es:
-            'Diseño y valuación económico-financiera de carteras, contratos contingentes, estimación de reservas de siniestros (IBNR) y tarificación técnica sustentable.',
-        desc_en: 'Design and financial valuation of portfolios, contingent contracts, loss reserving (IBNR), and sustainable technical pricing.',
-        tags: ['Pricing / Tarificación', 'Reservas IBNR', 'Seguros'],
-        benefit_es: 'Protección de solvencia técnica y márgenes operativos sostenibles.',
-        benefit_en: 'Protection of technical solvency and sustainable operating margins.'
+            'Diseño y valuación económico-financiera de carteras, contratos contingentes, estimación de reservas técnicas de siniestros (IBNR) y tarifas técnicas sustentables.',
+        desc_en:
+            'Financial and actuarial valuation of portfolios, contingent contracts, technical loss reserving (IBNR), and sustainable rate-making.',
+        tags: ['Tarificación / Pricing', 'Reservas IBNR', 'Solvencia Técnica'],
+        benefit_es: 'Protección de solvencia y márgenes operativos sostenibles.',
+        benefit_en: 'Solvency protection and long-term operating margin stability.'
     },
     {
         icon: '💼',
-        title_es: 'Business Intelligence & Tableros de Control',
-        title_en: 'Business Intelligence & Dashboards',
-        subtitle_es: 'Monitoreo Ejecutivo en Tiempo Real',
-        subtitle_en: 'Real-Time Executive Monitoring',
+        title_es: 'Tableros de Control & Monitoreo Ejecutivo',
+        title_en: 'Executive Dashboards & Real-Time Monitoring',
+        subtitle_es: 'Visualización Interactiva para Toma de Decisiones',
+        subtitle_en: 'Interactive Decision-Making Dashboards',
         desc_es:
-            'Diseño de paneles interactivos de control gerencial automatizados para el seguimiento en tiempo real de indicadores de volumen, cobranzas y siniestralidad.',
-        desc_en: 'Design of automated executive dashboards for real-time monitoring of volume, collections, and loss ratio indicators.',
-        tags: ['KPIs / Métricas', 'Dashboards', 'BI Ejecutivo'],
-        benefit_es: 'Visibilidad total del negocio para toma de decisiones rápida e informada.',
-        benefit_en: 'Total business visibility for fast, data-backed strategic decisions.'
+            'Diseño de tableros ejecutivos interactivos para el seguimiento en tiempo real de indicadores clave de facturación, aforo, volumen de clientes y cobranzas.',
+        desc_en:
+            'Design of interactive executive dashboards for real-time tracking of revenue, capacity utilization, volume, and collections indicators.',
+        tags: ['Indicadores Clave (KPIs)', 'Tableros Web', 'Control Gerencial'],
+        benefit_es: 'Visibilidad total e inmediata para anticiparse a desvíos operativos.',
+        benefit_en: 'Full operational visibility to proactively address financial deviations.'
     },
     {
         icon: '⚙️',
-        title_es: 'Automatización & Arquitectura de Datos',
-        title_en: 'Process Automation & Data Architecture',
-        subtitle_es: 'Pipelines & Bases Relacionales',
-        subtitle_en: 'Pipelines & Relational Databases',
+        title_es: 'Estructuración & Auditoría de Datos de Gestión',
+        title_en: 'Data Structuring & Management Auditing',
+        subtitle_es: 'Modelos Confiables & Procesos Auditables',
+        subtitle_en: 'Reliable Models & Auditable Workflows',
         desc_es:
-            'Migración y ordenamiento de planillas de cálculo dispersas a sistemas estructurados sobre bases de datos relacionales, reduciendo tiempos manuales.',
-        desc_en: 'Migration and restructuring of fragmented spreadsheets into auditable relational database workflows, drastically cutting manual overhead.',
-        tags: ['ETL / Automatización', 'Bases de Datos', 'Eficiencia'],
-        benefit_es: 'Eliminación de errores operativos y escalabilidad de los flujos de trabajo.',
-        benefit_en: 'Elimination of manual errors and seamless scalability of workflows.'
+            'Conversión de planillas de cálculo dispersas o frágiles en sistemas estructurados y centralizados, garantizando consistencia matemática y trazabilidad completa.',
+        desc_en:
+            'Conversion of fragmented, fragile spreadsheets into structured, central models, ensuring mathematical consistency and full auditability.',
+        tags: ['Modelos Auditables', 'Procesos Confiables', 'Eficiencia'],
+        benefit_es: 'Eliminación de errores operativos y escalabilidad de la gestión diaria.',
+        benefit_en: 'Elimination of manual errors and seamless operational scalability.'
     }
 ];
 
@@ -90,43 +93,37 @@ const benefits = [
     {
         title_es: 'Modelos Financieros Dinámicos',
         title_en: 'Dynamic Financial Models',
-        desc_es: 'Simulaciones precisas adaptadas a la realidad de tu PyME.',
-        desc_en: 'Accurate simulations tailored to your SME reality.'
+        desc_es: 'Simulaciones a medida según la estructura operativa de tu PyME.',
+        desc_en: 'Tailored simulations aligned with your operational business structure.'
     },
     {
         title_es: 'Mitigación de Riesgos',
         title_en: 'Risk Mitigation',
-        desc_es: 'Respaldo cuantitativo para decisiones de inversión y crédito.',
-        desc_en: 'Quantitative backing for investment and credit decisions.'
+        desc_es: 'Respaldo cuantitativo para decisiones estratégicas y de inversión.',
+        desc_en: 'Quantitative evidence for strategic and investment decisions.'
     },
     {
-        title_es: 'Eficiencia de Procesos',
-        title_en: 'Process Efficiency',
-        desc_es: 'Optimización de aforo, turnos y automatización de reportes.',
-        desc_en: 'Throughput optimization, scheduling, and automated reporting.'
-    },
-    {
-        title_es: 'Capacitaciones',
-        title_en: 'Training & Workshops',
-        desc_es: 'Capacitaciones personalizadas para tu equipo en análisis de datos, pensamiento crítico de negocio y administración financiera.',
-        desc_en: 'Customized training for your team in data analysis, critical business thinking, and financial management.'
+        title_es: 'Eficiencia Operativa',
+        title_en: 'Operational Efficiency',
+        desc_es: 'Optimización de aforo, turnos y monitoreo en tiempo real.',
+        desc_en: 'Capacity and throughput optimization with real-time tracking.'
     }
 ];
 ---
 
-<section id="servicios" class="services-section">
+<section id="servicios" class="services-section scroll-reveal">
     <div class="container">
         <div class="section-header">
             <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent mb-2">
-                <T es="Servicios personalizados" en="Tailored Services" />
+                <T es="Enfoque en Soluciones de Negocio" en="Business Solutions Focus" />
             </span>
-            <h2>
-                <T es="Servicios para PyMEs" en="Services for SMEs" />
+            <h2 class="text-2xl sm:text-4xl font-serif font-medium">
+                <T es="Servicios de Consultoría Cuantitativa" en="Quantitative Consulting Services" />
             </h2>
-            <p>
+            <p class="text-sm sm:text-base opacity-85 max-w-2xl mx-auto mt-2 text-pretty">
                 <T
-                    es="Soluciones cuantitativas y simuladores a medida para evaluar viabilidad financiera, optimizar aforo operativo y presentar proyectos sólidos a inversores."
-                    en="Quantitative solutions and bespoke simulators to assess financial viability, optimize operational capacity, and present solid cases to investors."
+                    es="Soluciones cuantitativas y simuladores orientados al impacto: viabilidad financiera, optimización de aforo operativo y fundamentación ante inversores."
+                    en="Impact-driven quantitative solutions and simulators: financial viability, operational capacity optimization, and investor case-building."
                 />
             </p>
         </div>
@@ -187,7 +184,7 @@ const benefits = [
 
 <style>
     .services-section {
-        padding: 3rem 0;
+        padding: 2.5rem 0 3.5rem;
     }
     .container {
         max-width: 1100px;
@@ -196,18 +193,6 @@ const benefits = [
     .section-header {
         text-align: center;
         margin-bottom: 2.5rem;
-    }
-    .section-header h2 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-    }
-    .section-header p {
-        opacity: 0.85;
-        font-size: 1.05rem;
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.6;
     }
     .benefits-banner {
         display: grid;
@@ -241,10 +226,7 @@ const benefits = [
         padding: 2rem 1.75rem;
         display: flex;
         flex-direction: column;
-        transition:
-            transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-            box-shadow 0.35s ease,
-            border-color 0.3s ease;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
     }
     .service-card:hover {
         transform: translateY(-8px);
